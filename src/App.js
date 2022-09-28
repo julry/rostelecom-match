@@ -46,17 +46,17 @@ const ComponentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  overflow: auto;
+  overflow-x: hidden;
   white-space: pre-line;
 `;
 
 const LogoWrapper = styled.div`
   position: absolute;
-  top: 5.2083vh;
-  left: 9.2592vw;
-  height: 7.2916vh;
+  top: 5.2083%;
+  left: 9.2592%;
+  height: 7.2916%;
   max-height: 52px;
-  width: 7.7777vw;
+  width: 7.7777%;
   max-width: 40px;
   z-index: 10000;
 `;
@@ -91,21 +91,25 @@ function App() {
   const [height, setHeight] = useState("100vh");
   const progress = useProgressInit();
   const { screen, updateProgress } = progress;
-
-    const Component = screen?.component || (() => null);
+  const notResizedScreens = [3];
+  const Component = screen?.component || (() => null);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
     updateProgress("wrapperRef", wrapperRef);
   }, []);
 
-    useEffect(() => {
-      const preloadImages = screen?.preloadImages;
-      const clears = preloadImages && preloadImages.map(img => preloadImage(img));
-      return () => clears && clears.forEach(clear => clear());
-    }, [screen]);
+  useEffect(() => {
+    const preloadImages = screen?.preloadImages;
+    const clears = preloadImages && preloadImages.map(img => preloadImage(img));
+    return () => clears && clears.forEach(clear => clear());
+  }, [screen]);
 
   useEffect(() => {
+    if (notResizedScreens.includes(screen.id)) {
+      handleResize();
+      return;
+    }
     function handleResize() {
       const viewportHeight = document.documentElement.clientHeight;
       setHeight(viewportHeight + "px");
@@ -116,7 +120,7 @@ function App() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [screen]);
 
   return (
     <ProgressProvider value={progress}>

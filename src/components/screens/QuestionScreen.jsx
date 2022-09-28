@@ -78,6 +78,5 @@ export const QuestionScreen = () => {
                 cardRef={childRefs[currentIndex]}
             />
         </Wrapper>
-
     );
 };

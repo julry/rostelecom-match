@@ -5,13 +5,14 @@ import { AddictiveText, Description, LightText, RegularText, Title } from '../..
 import { LoadingIcon } from '../../shared/svg/LoadingIcon';
 
 export const StyledCard = styled(SwipeCard)`
-  height: 35.9375vh;
-  padding: 3.2vh;
+  height: 35.9375%;
+  padding: 7%;
+  min-height: 240px;
   border-color: ${colors.purple}
 `;
 
 export const Wrapper = styled.div`
-  padding-top: 14.7083vh;
+  padding-top: 25.7083%;
   height: 100%;
 `;
 
@@ -24,14 +25,13 @@ export const Label = styled(RegularText)`
   }
 `
 export const StyledTitle = styled(Title)`
-    margin-left: 9.2592vw;
+    margin-left: 9.2592%;
 `;
 
 export const Form = styled.div`
   position: relative;
   z-index: 3;
-  padding: 5.2083vh 0;
-  
+  padding: 5.2083% 0;
   
   @media screen and (min-width: 1000px) {
     display: flex;
@@ -122,10 +122,11 @@ export const TextStyled = styled(LightText)`
 `;
 
 export const CardWrapper = styled.div`
-  margin: 5.8125vh 0 4.1666vh;
+  margin: 5.8125% 0 4.1666%;
   display: flex;
   justify-content: center;
-  height: 35.9375vh;
+  height: 35.9375%;
+  min-height: 240px;
 `;
 
 export const PersonalDataLink = styled.span`
@@ -191,7 +192,8 @@ export const LoadingText = styled(AddictiveText)`
 
 
 export const DummyCard = styled.div`
-  height: 46.2625vh;
+  height: 46.2625%;
+  min-height: 240px;
 `;
 
 export const CardContentWrapper = styled.div`
