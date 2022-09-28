@@ -14,7 +14,7 @@ import {
 import { colors } from '../../constants/colors';
 
 const Wrapper = styled.div`
-  padding: 15.7083vh 9.2592vw 20px 9.2592vw;
+  padding: 14.2083vh 9.2592vw 20px 9.2592vw;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@ const ColoredTitle = styled(ColoredText)`
 `;
 
 const MatchWrapper = styled.div`
-    margin: 2.2142vh 0;
+    margin: 1.8142vh 0;
 `;
 
 const ButtonBlock = styled.div`
@@ -61,7 +61,7 @@ const StyledButton = styled(Button)`
   margin-bottom: 5px;
 `;
 
-export const SmallText = styled(SmallLightText)`
+const SmallText = styled(SmallLightText)`
   text-align: center;
 
   @media screen and (max-width: 330px) {
@@ -69,6 +69,9 @@ export const SmallText = styled(SmallLightText)`
   }
 `;
 
+const Description = styled(RegularDescription)`
+    margin-bottom: 1vh;
+`
 export const BonusScreen = () => {
     const bonuses = useBonusesResult();
     const [copyReadyModal, setCopyReadyModal] = useState(false);
@@ -128,10 +131,9 @@ export const BonusScreen = () => {
                 </ColoredTitle>
             </Title>
         </MatchWrapper>
-        <RegularDescription>
+        <Description>
             Помимо мэтча с командой тебя ждут прекрасные отношения и с самой компанией :)
-        </RegularDescription>
-        <br/>
+        </Description>
         <AddictiveText>
             Вместе вы сможете:
         </AddictiveText>

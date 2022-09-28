@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import QRCode from 'react-qr-code';
 import styled from 'styled-components';
-import { BrowserView, MobileView } from 'react-device-detect';
+import { BrowserView, isDesktop, MobileView, isMobile } from 'react-device-detect';
 import { ProgressProvider } from './context/ProgressContext';
 import { useProgressInit } from "./hooks/useProgressInit";
 import { preloadImage } from "./utils/preloadImage";
@@ -111,7 +111,6 @@ function App() {
       setHeight(viewportHeight + "px");
     }
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -137,13 +136,15 @@ function App() {
             <Title>Пожалуйста, переверни устройство :)</Title>
           </InfoScreen>
         </MobileViewLandscaped>
-        <BrowserViewStyled>
-          <InfoScreen direction={'column'}>
-            <InfoBackground />
-            <Title>Пожалуйста, воспользуйся телефоном :)</Title>
-            <QRCodeStyled value={window.location.href} fgColor={colors.orange}/>
-          </InfoScreen>
-        </BrowserViewStyled>
+        {isDesktop && !isMobile && (
+            <BrowserViewStyled>
+              <InfoScreen direction={'column'}>
+                <InfoBackground />
+                <Title>Пожалуйста, воспользуйся телефоном :)</Title>
+                <QRCodeStyled value={window.location.href} fgColor={colors.orange}/>
+              </InfoScreen>
+            </BrowserViewStyled>
+        )}
       </Wrapper>
     </ProgressProvider>
   );
