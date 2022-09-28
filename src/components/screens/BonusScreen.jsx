@@ -29,10 +29,10 @@ const LiStyled = styled.li`
   list-style-type: none;
   display: flex;
   align-items: center;
-  margin-top: 2.6041vh;
+  margin-top: 1.8041vh;
 
   @media screen and (max-width: 330px) {
-    margin-top: 1.6041vh;
+    margin-top: 1.2041vh;
   }
 `;
 
@@ -48,7 +48,7 @@ const ColoredTitle = styled(ColoredText)`
 `;
 
 const MatchWrapper = styled.div`
-    margin: 3.2142vh 0;
+    margin: 2.2142vh 0;
 `;
 
 const ButtonBlock = styled.div`
