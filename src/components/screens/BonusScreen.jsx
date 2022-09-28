@@ -4,14 +4,25 @@ import { Modal } from '../shared/Modal';
 import { DoneMark } from '../shared/svg/DoneMark';
 import { Button } from '../shared/Button';
 import styled from 'styled-components';
-import { AddictiveText, ColoredText, LightText, RegularDescription, Title } from '../shared/styledTexts';
+import {
+    AddictiveText,
+    ColoredText,
+    RegularDescription,
+    SmallLightText,
+    Title
+} from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 
 const Wrapper = styled.div`
-  padding: 17.7083vh 9.2592vw 20px 9.2592vw;
+  padding: 15.7083vh 9.2592vw 20px 9.2592vw;
   height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 800px;
+  
+  @media screen and (max-width: 330px) {
+    padding-top: 12.4251vh;
+  }
 `;
 
 const LiStyled = styled.li`
@@ -19,10 +30,13 @@ const LiStyled = styled.li`
   display: flex;
   align-items: center;
   margin-top: 2.6041vh;
+
+  @media screen and (max-width: 330px) {
+    margin-top: 1.6041vh;
+  }
 `;
 
 const LiDoneMark = styled(DoneMark)`
-  width: 4.7222vw;
   height: 2.0833vh;
   min-width: 2.6914vh;
   margin-right: 10px;
@@ -47,9 +61,12 @@ const StyledButton = styled(Button)`
   margin-bottom: 5px;
 `;
 
-export const SmallText = styled(LightText)`
-  font-size: 13px;
+export const SmallText = styled(SmallLightText)`
   text-align: center;
+
+  @media screen and (max-width: 330px) {
+    font-size: 9px;
+  }
 `;
 
 export const BonusScreen = () => {

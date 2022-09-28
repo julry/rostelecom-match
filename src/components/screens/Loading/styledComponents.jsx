@@ -12,19 +12,32 @@ export const StyledCard = styled(SwipeCard)`
 
 export const Wrapper = styled.div`
   padding-top: 14.7083vh;
+  height: 100%;
 `;
 
 export const Label = styled(RegularText)`
   font-size: 11px;
-  color: ${({isError}) => isError ? 'red' : '#797E8B'}
+  color: ${({isError}) => isError ? 'red' : '#797E8B'};
+
+  @media screen and (min-width: 1000px) {
+    font-size: 15px;
+  }
 `
 export const StyledTitle = styled(Title)`
     margin-left: 9.2592vw;
 `;
 
 export const Form = styled.form`
-    position: relative;
-    z-index: 3;
+  position: relative;
+  z-index: 3;
+  padding: 5.2083vh 0;
+  
+  
+  @media screen and (min-width: 1000px) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const Input = styled.input`
@@ -40,6 +53,10 @@ export const Input = styled.input`
     &:focus{ 
         outline: none;
     }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 17px;
+  }
 `;
 
 export const InputCheckboxStyled = styled.input`
@@ -54,6 +71,11 @@ export const RadioIconStyled = styled.div`
   border: 1px solid #B5B7C0;
   border-radius: 2px;
   margin-right: 10px;
+  
+  @media screen and (min-width: 1000px) {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export const LabelStyled = styled.label`
@@ -61,6 +83,10 @@ export const LabelStyled = styled.label`
   align-items: center;
   cursor: pointer;
   margin-top: 10px;
+
+  @media screen and (min-width: 1000px) {
+    margin-top: auto;
+  }
   
   & ${InputCheckboxStyled}:checked + ${RadioIconStyled}:after {
     content: '';
@@ -71,6 +97,11 @@ export const LabelStyled = styled.label`
     height: 10px;
     border-radius: 1px;
     background-color: ${colors.orange};
+
+    @media screen and (min-width: 1000px) {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 
@@ -84,12 +115,10 @@ export const TextStyled = styled(LightText)`
   font-family: 'LabGrotesque', serif;
   color: #797E8B;
   font-size: 9px;
-`;
 
-export const SubmitBtn = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+  @media screen and (min-width: 1000px) {
+    font-size: 14px;
+  }
 `;
 
 export const CardWrapper = styled.div`
@@ -105,11 +134,18 @@ export const PersonalDataLink = styled.span`
 
 export const DescriptionStyled = styled(RegularText)`
     font-size: 13px;
+  
+  @media screen and (max-width: 330px){
+    font-size: 11px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 17px;
+  }
 `
 
 export const InputWrapper = styled.div`
   padding: 10px;
-  margin-top: 5.2083vh;
   border-radius: 10px;
   background: #F4F4F5;
 `;
@@ -128,7 +164,9 @@ export const LoadingStyled = styled(LoadingIcon)`
   min-width: 20px;
   min-height: 20px;
   width: 8.7037vw;
+  max-width: 60px;
   height: 8.7037vw;
+  max-height: 60px;
   transition: all 0.5s ease-in;
   animation: ${rotate} 2.5s infinite linear;
 `;
@@ -144,4 +182,18 @@ export const LoadingWrapper = styled.div`
 export const LoadingText = styled(AddictiveText)`
   max-width: 200px;
   margin-left: 10px;
+
+  @media screen and (min-width: 1000px) {
+    max-width: 400px;
+    margin-left: 20px;
+  }
 `;
+
+
+export const DummyCard = styled.div`
+  height: 46.2625vh;
+`;
+
+export const CardContentWrapper = styled.div`
+    height: 100%;
+`

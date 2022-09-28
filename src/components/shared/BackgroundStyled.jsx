@@ -15,10 +15,14 @@ const BackgroundWrapper = styled.div`
 const BackgroundSvgStyled = styled(Background)`
   width: auto;
   height: 100%;
+  @media screen and (min-width: 1000px) {
+    width: 180%;
+    height: auto;
+  }
 `;
 
-export const BackgroundStyled = () => (
-    <BackgroundWrapper>
+export const BackgroundStyled = (props) => (
+    <BackgroundWrapper {...props}>
         <BackgroundSvgStyled />
     </BackgroundWrapper>
 )

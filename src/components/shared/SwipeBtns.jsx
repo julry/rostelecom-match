@@ -6,6 +6,7 @@ import { ArrowRight } from './svg/ArrowRight';
 const ButtonsContainer = styled.div`
   width: 100%;
   position: absolute;
+  left: 0;
   bottom: 5vh;
   display: flex;
   justify-content: space-between;

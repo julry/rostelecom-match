@@ -9,8 +9,6 @@ const Wrapper = styled.div`
   background-color: #fff;
   width: 81.4814vw;
   max-width: 880px;
-  height: 61.4583vh;
-  max-height: 1180px;
   border: 1px solid ${colors.orange};
   border-radius: 10px;
   background-size: cover;
@@ -38,7 +36,15 @@ const CardCount = styled(MediumText)`
 
 const Sentence = styled(BoldText)`
   font-size: 20px;
-  margin: 5.2vh 1vh 0 9.2592vw;
+  margin: 5.2vh 5.2592vw 0 9.2592vw;
+  
+  @media screen and (max-width: 330px){
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 22px;
+  }
 `;
 
 const ImageWrapper = styled.div`

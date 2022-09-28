@@ -18,14 +18,30 @@ export const RegularText = styled.p`
 
 export const Title = styled(BoldText)`
   font-size: 17px;
+  @media screen and (max-width: 330px){
+      font-size: 14px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 20px;
+  }
 `;
 
 export const Description = styled(MediumText)`
   font-size: 16px;
+  @media screen and (min-width: 1000px) {
+    font-size: 18px;
+  }
 `;
 
 export const AddictiveText = styled(MediumText)`
   font-size: 12px;
+  @media screen and (max-width: 330px){
+    font-size: 10px;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 14px;
+  }
 `;
 
 export const ColoredText = styled.span`
@@ -35,5 +51,19 @@ export const ColoredText = styled.span`
 
 export const RegularDescription = styled(RegularText)`
   font-size: 12px;
+
+  @media screen and (max-width: 330px){
+    font-size: 10px;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 16px;
+  }
 `;
 
+export const SmallLightText = styled(LightText)`
+  font-size: 13px;
+
+  @media screen and (max-width: 330px) {
+    font-size: 9px;
+  }
+`

@@ -40,6 +40,9 @@ const Icon = styled.div`
   width: 18.2609%;  
   height: 4.2708vh;
   margin-bottom: 15px;
+  & svg {
+    height: 100%;
+  }
 `;
 
 export const Modal = (props) => (

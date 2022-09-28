@@ -52,6 +52,7 @@ const ImportantWrapper = styled.div`
   display: flex;
   max-width: 68.7962vw;
   margin: 0 auto;
+  align-items: center;
 `;
 
 const ImportantSignWrapper = styled.div`
@@ -60,6 +61,10 @@ const ImportantSignWrapper = styled.div`
   width: 2.5vw;
   max-width: 27px;
   margin-right: 4.6296vw;
+  
+  @media screen and (min-width: 1000px) {
+    margin-right: 20px;
+  }
 `;
 
 const ImportantSign = getStyledSvg(ImportantMark);

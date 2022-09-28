@@ -18,6 +18,11 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
+const StyledCard = styled(SwipeCard)`
+  height: 61.4583vh;
+  max-height: 1180px;
+`
+
 export const QuestionScreen = () => {
     const {cards = [], updateAnswer, updateCards, next} = useProgress();
     const [currentCardId, setCurrentCardId] = useState('');
@@ -57,7 +62,7 @@ export const QuestionScreen = () => {
             <BackgroundStyled />
             <CardContainer>
                 {[...cards].reverse().map((card, index) => (
-                    <SwipeCard
+                    <StyledCard
                         key={card.id}
                         card={card}
                         cardRef={childRefs[index]}

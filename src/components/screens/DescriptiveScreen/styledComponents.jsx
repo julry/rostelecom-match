@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { Description, LightText, Title } from '../../shared/styledTexts';
+import { Description, LightText, SmallLightText, Title } from '../../shared/styledTexts';
 import { SwipeCard } from '../../shared/SwipeCard';
 import { SwipeIcon } from '../../shared/svg/SwipeIcon';
 import { SwipeBtns } from '../../shared/SwipeBtns';
@@ -55,9 +55,8 @@ export const HighlightedText = styled.span`
   color: ${({color}) => color};
 `;
 
-export const SmallText = styled(LightText)`
+export const SmallText = styled(SmallLightText)`
   position: absolute;
-  font-size: 13px;
   bottom: 2.4vh;
   left: 50%;
   transform: translateX(-50%);

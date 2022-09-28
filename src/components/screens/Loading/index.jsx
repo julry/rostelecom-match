@@ -3,7 +3,8 @@ import { useIMask } from 'react-imask';
 import { useProgress } from '../../../hooks/useProgress';
 import { SwipeBtns } from '../../shared/SwipeBtns';
 import {
-    CardWrapper, Description, DescriptionStyled,
+    CardContentWrapper,
+    CardWrapper, DescriptionStyled, DummyCard,
     Form,
     Input, InputCheckboxStyled, InputWrapper, Label,
     LabelStyled, LoadingStyled, LoadingText, LoadingWrapper,
@@ -17,7 +18,6 @@ import { openHref } from '../../../utils/openHref';
 import { ColoredText } from '../../shared/styledTexts';
 import { Modal } from '../../shared/Modal';
 import { DoneMark } from '../../shared/svg/DoneMark';
-import { Background } from '../../shared/svg/Background';
 import { BackgroundStyled } from '../../shared/BackgroundStyled';
 
 export const Loading = () => {
@@ -73,7 +73,7 @@ export const Loading = () => {
     }, [value]);
 
     const CardContent = () => (
-        <div onTouchStart={() => {
+        <CardContentWrapper onTouchStart={() => {
             ref.current.blur();
             setAutoFocus(false);
         }}>
@@ -121,7 +121,7 @@ export const Loading = () => {
                     </TextWrapperStyled>
                 </LabelStyled>
             </Form>
-        </div>
+        </CardContentWrapper>
     );
 
     const Card = ({phone}) => (
@@ -138,12 +138,14 @@ export const Loading = () => {
             <StyledTitle>
                 Оставь свой номер телефона, чтобы участвовать в розыгрыше призов!
             </StyledTitle>
-            {!sendingMessage.success && <CardWrapper>
+            {!sendingMessage.success ?  (
+                <CardWrapper>
                 {(phone?.length && agreement) ? (
                     <Card phone={phone}/>
                 ) : <StyledCard onSwipe={onSwipe} cardRef={cardRef} prohibitDir={'right'} Component={CardContent}/>
                 }
-            </CardWrapper>
+                </CardWrapper>
+            ) : <DummyCard />
             }
             <LoadingWrapper>
                 <LoadingStyled />

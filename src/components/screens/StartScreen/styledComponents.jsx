@@ -27,6 +27,12 @@ export const ManWrapper = styled.div`
   margin-left: 3.5407vw;
   position: relative;
   z-index: 3;
+  
+  @media screen and (min-width: 1000px) {
+    width: 150px;
+    height: 203px;
+    min-width: 150px;
+  }
 `;
 
 export const Man = styled.img`
@@ -41,6 +47,11 @@ export const ThinkPathWrapper = styled.div`
   left: 20.1851vw;
   height: 6.7187vh;
   width: 22.7777vw;
+  
+  @media screen and (min-width: 1000px) {
+    top: 0.1777%;
+    left: 25.5%;
+  }
 `;
 
 export const ThinkPath = getStyledSvg(ThinkingPath);
@@ -51,6 +62,12 @@ export const ThinkWrapper = styled.div`
   top: 17.9375vh;
   width: 63.4259vw;
   height: 9.53125vh;
+  min-height: 55px;
+
+  @media screen and (min-width: 1000px) {
+    top: 10.1777%;
+    left: 30.5%;
+  }
 `;
 
 export const ThinkCloudStyled = getStyledSvg(ThinkingCloud);
@@ -60,6 +77,15 @@ export const ThinkText = styled(MediumText)`
   position: absolute;
   top: 31%;
   left: 11.8248%;
+  @media screen and (max-width: 300px){
+    left: 15%;
+    font-size: 8px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 12px;
+    left: 5.5%;
+  }
 `;
 
 export const SmallText = styled(LightText)`
@@ -67,6 +93,12 @@ export const SmallText = styled(LightText)`
   font-size: 7px;
   bottom: -20px;
   left: 11.8248%;
+
+  @media screen and (min-width: 1000px) {
+    font-size: 10px;
+    bottom: -30px;
+    left: 5.5%;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -76,6 +108,11 @@ export const DescriptionWrapper = styled.div`
   margin: 0 9.2592vw;
   padding: 4.8229vh 9.2592vw;
   z-index: 10;
+
+  @media screen and (min-width: 1000px) {
+    margin: 0;
+    padding: 70px;
+  }
 `;
 
 export const ImportantWrapper = styled.div`
@@ -89,6 +126,10 @@ export const ImportantSign = styled(ImportantMark)`
   width: 2.5vw;
   max-width: 27px;
   margin-right: 4.6296vw;
+
+  @media screen and (min-width: 1000px) {
+    margin-right: 20px;
+  }
 `;
 
 export const StartBtn = styled(Button)`
@@ -97,6 +138,7 @@ export const StartBtn = styled(Button)`
   transform: translate(-50%, 0);
   width: 45.92592vw;
   bottom: calc(-1.0416vh - 8px);
+  max-width: 250px;
 `;
 
 export const PurpleRoadWrapper = styled.div`
@@ -143,3 +185,13 @@ export const BlackRoadWrapper = styled.div`
 
 export const BlackRoad = getStyledSvg(RoadBlack);
 
+export const ContentBlock = styled.div`
+  height: 100%;
+  width: 100%;
+  
+  @media screen and (min-width: 1000px){
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+`
