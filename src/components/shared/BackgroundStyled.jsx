@@ -19,6 +19,11 @@ const BackgroundSvgStyled = styled(Background)`
     width: 180%;
     height: auto;
   }
+  
+  @media screen and (min-height: 800px){
+    width: 180%;
+    height: auto;
+  }
 `;
 
 export const BackgroundStyled = (props) => (
