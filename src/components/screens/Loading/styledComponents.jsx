@@ -27,7 +27,7 @@ export const StyledTitle = styled(Title)`
     margin-left: 9.2592vw;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   position: relative;
   z-index: 3;
   padding: 5.2083vh 0;

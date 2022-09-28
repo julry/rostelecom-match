@@ -21,6 +21,7 @@ const StyledCard = styled(TinderCard)`
   will-change: opacity;
   opacity: ${({isBackgroundCard, hasLoad}) => isBackgroundCard ? '0' : hasLoad ? '100%' : '20%'};
   transition: opacity 0.75s;
+  z-index: 24;
 `;
 
 const StyledContent = styled.div`

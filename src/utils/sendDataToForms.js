@@ -4,7 +4,6 @@ const GOOGLE_FORM_PHONE_ID = 'entry.230502528';
 const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSdhWxpMV7aVQ5wTdmij9XtpzXeenbkTEtgOCgNz7DoLYVNLsQ/formResponse';
 export const sendDataToForms = ({phone}) => {
     const formData = new FormData();
-    console.log(phone);
     formData.append(GOOGLE_FORM_PHONE_ID, phone);
     const myInit = {
         method: 'POST',

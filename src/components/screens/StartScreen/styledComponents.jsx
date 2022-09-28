@@ -76,9 +76,9 @@ export const ThinkText = styled(MediumText)`
   font-size: 9px;
   position: absolute;
   top: 31%;
-  left: 11.8248%;
+  left: 12.8248%;
   @media screen and (max-width: 300px){
-    left: 15%;
+    left: 16%;
     font-size: 8px;
   }
 
@@ -92,7 +92,7 @@ export const SmallText = styled(LightText)`
   position: absolute;
   font-size: 7px;
   bottom: -20px;
-  left: 11.8248%;
+  left: 12.8248%;
 
   @media screen and (min-width: 1000px) {
     font-size: 10px;

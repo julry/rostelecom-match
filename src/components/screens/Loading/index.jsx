@@ -15,7 +15,7 @@ import {
 } from './styledComponents';
 import { sendDataToForms } from '../../../utils/sendDataToForms';
 import { openHref } from '../../../utils/openHref';
-import { ColoredText } from '../../shared/styledTexts';
+import { ColoredText, Description } from '../../shared/styledTexts';
 import { Modal } from '../../shared/Modal';
 import { DoneMark } from '../../shared/svg/DoneMark';
 import { BackgroundStyled } from '../../shared/BackgroundStyled';
@@ -61,7 +61,7 @@ export const Loading = () => {
         if (side === 'right') {
             if (phone?.length && agreement) handleSubmit(phone)
         }
-        else next()
+        else if (side === 'left') next()
     }
 
     useEffect(() => {
@@ -73,15 +73,19 @@ export const Loading = () => {
     }, [value]);
 
     const CardContent = () => (
-        <CardContentWrapper onTouchStart={() => {
-            ref.current.blur();
-            setAutoFocus(false);
-        }}>
+        <CardContentWrapper
+            onTouchStart={() => {
+            if (autoFocus) {
+                ref.current.blur();
+                setAutoFocus(false);
+            }
+        }}
+        >
             <DescriptionStyled>
                 Обещаем, что будем использовать его только для оповещения о выигрыше{'\n'}
                 Свайпай <ColoredText color={'red'}>влево</ColoredText>, если <ColoredText color={'red'}>не хочешь</ColoredText> получить мерч от Ростелекома
             </DescriptionStyled>
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <InputWrapper>
                     <Label isError={errorText.length}>{errorText ? errorText : 'Номер телефона'}</Label>
                     <Input
@@ -142,7 +146,8 @@ export const Loading = () => {
                 <CardWrapper>
                 {(phone?.length && agreement) ? (
                     <Card phone={phone}/>
-                ) : <StyledCard onSwipe={onSwipe} cardRef={cardRef} prohibitDir={'right'} Component={CardContent}/>
+                ) :
+                    <StyledCard onSwipe={onSwipe} cardRef={cardRef} prohibitDir={'right'} Component={CardContent}/>
                 }
                 </CardWrapper>
             ) : <DummyCard />
