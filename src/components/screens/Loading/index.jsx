@@ -15,7 +15,7 @@ import {
 } from './styledComponents';
 import { sendDataToForms } from '../../../utils/sendDataToForms';
 import { openHref } from '../../../utils/openHref';
-import { ColoredText, Description } from '../../shared/styledTexts';
+import { ColoredText } from '../../shared/styledTexts';
 import { Modal } from '../../shared/Modal';
 import { DoneMark } from '../../shared/svg/DoneMark';
 import { BackgroundStyled } from '../../shared/BackgroundStyled';
@@ -73,20 +73,18 @@ export const Loading = () => {
     }, [value]);
 
     const CardContent = () => (
-        <CardContentWrapper
-            onTouchStart={() => {
-            if (autoFocus) {
-                ref.current.blur();
-                setAutoFocus(false);
-            }
-        }}
-        >
+        <CardContentWrapper>
             <DescriptionStyled>
                 Обещаем, что будем использовать его только для оповещения о выигрыше{'\n'}
                 Свайпай <ColoredText color={'red'}>влево</ColoredText>, если <ColoredText color={'red'}>не хочешь</ColoredText> получить мерч от Ростелекома
             </DescriptionStyled>
             <Form>
-                <InputWrapper>
+                <InputWrapper
+                    onTouchStart={(e) => onTouchStart(e,() => {
+                        setAutoFocus(true);
+                    })}
+                    onBlur={() => setAutoFocus(false)}
+                >
                     <Label isError={errorText.length}>{errorText ? errorText : 'Номер телефона'}</Label>
                     <Input
                         ref={ref}
@@ -97,11 +95,6 @@ export const Loading = () => {
                         autoFocus={autoFocus}
                         onChange={e => setValue(e.target.value)}
                         required
-                        onTouchStart={(e) => onTouchStart(e,() => {
-                            setAutoFocus(true);
-                            ref.current.focus();
-                        })}
-                        onClick={() => setAutoFocus(true)}
                     />
                 </InputWrapper>
                 <LabelStyled
@@ -137,7 +130,12 @@ export const Loading = () => {
     )
 
     return (
-        <Wrapper>
+        <Wrapper
+            onTouchStart={() => {
+            if (autoFocus) {
+                setAutoFocus(false);
+            }}}
+        >
             <BackgroundStyled/>
             <StyledTitle>
                 Оставь свой номер телефона, чтобы участвовать в розыгрыше призов!
