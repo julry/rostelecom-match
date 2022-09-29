@@ -21,6 +21,10 @@ const Wrapper = styled.div`
 const StyledCard = styled(SwipeCard)`
   height: 61.4583vh;
   max-height: 1180px;
+  
+  @media screen and (max-height: 500px){
+    height: 55vh;
+  }
 `
 
 export const QuestionScreen = () => {

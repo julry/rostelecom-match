@@ -14,11 +14,18 @@ export const StyledCard = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
+  @media screen and (max-height: 550px) {
+    min-height: 190px;
+  }
 `;
 
 export const Wrapper = styled.div`
   padding-top: 30.7083%;
   height: 100%;
+
+  @media screen and (max-height: 550px) {
+    padding-top: 28.7083%;
+  }
 `;
 
 export const Label = styled(RegularText)`
@@ -133,6 +140,10 @@ export const CardWrapper = styled.div`
   align-items: center;
   height: 35.9375%;
   min-height: 240px;
+
+  @media screen and (max-height: 550px){
+    min-height: 190px;
+  }
 `;
 
 export const PersonalDataLink = styled.span`
@@ -200,6 +211,9 @@ export const LoadingText = styled(AddictiveText)`
 export const DummyCard = styled.div`
   height: 46.2625%;
   min-height: 240px;
+  @media screen and (max-height: 550px) {
+    min-height: 190px;
+  }
 `;
 
 const sending = keyframes`

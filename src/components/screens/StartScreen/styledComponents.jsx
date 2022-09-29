@@ -15,6 +15,8 @@ export const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ManWrapper = styled.div`
@@ -180,7 +182,7 @@ export const BlackRoadWrapper = styled.div`
   min-width: 17.9166vh;
   overflow: hidden;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 `;
 
 export const BlackRoad = getStyledSvg(RoadBlack);
