@@ -20,7 +20,7 @@ const BackgroundSvgStyled = styled(Background)`
     height: auto;
   }
   
-  @media screen and (min-height: 800px){
+  @media screen and (min-height: 800px) and (min-width: 640px){
     width: 180%;
     height: auto;
   }

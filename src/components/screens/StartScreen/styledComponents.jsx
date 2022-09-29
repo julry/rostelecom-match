@@ -78,7 +78,7 @@ export const ThinkText = styled(MediumText)`
   top: 31%;
   left: 12.8248%;
   @media screen and (max-width: 300px){
-    left: 16%;
+    left: 18%;
     font-size: 8px;
   }
 

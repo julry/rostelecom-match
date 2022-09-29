@@ -1,18 +1,23 @@
 import styled, { keyframes } from 'styled-components';
-import { SwipeCard } from '../../shared/SwipeCard';
 import { colors } from '../../../constants/colors';
-import { AddictiveText, Description, LightText, RegularText, Title } from '../../shared/styledTexts';
+import { AddictiveText, LightText, RegularText, SmallLightText, Title } from '../../shared/styledTexts';
 import { LoadingIcon } from '../../shared/svg/LoadingIcon';
+import { Button } from '../../shared/Button';
 
-export const StyledCard = styled(SwipeCard)`
+export const StyledCard = styled.div`
+  position: relative;
   height: 35.9375%;
   padding: 7%;
   min-height: 240px;
-  border-color: ${colors.purple}
+  width: 81.4814vw;
+  max-width: 880px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid ${colors.purple};
 `;
 
 export const Wrapper = styled.div`
-  padding-top: 25.7083%;
+  padding-top: 30.7083%;
   height: 100%;
 `;
 
@@ -122,9 +127,10 @@ export const TextStyled = styled(LightText)`
 `;
 
 export const CardWrapper = styled.div`
-  margin: 5.8125% 0 4.1666%;
+  margin: 5.8125% 0 24.1666%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: 35.9375%;
   min-height: 240px;
 `;
@@ -176,7 +182,7 @@ export const LoadingStyled = styled(LoadingIcon)`
 export const LoadingWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 20% auto 5%;
   width: calc(8.7037vw + 210px);
 `;
 
@@ -196,6 +202,31 @@ export const DummyCard = styled.div`
   min-height: 240px;
 `;
 
-export const CardContentWrapper = styled.div`
-    height: 100%;
+const sending = keyframes`
+    0% {
+      scale: 1;
+    }
+    50%{
+      scale: 1.06;
+    }
+    100% {
+      scale: 1;
+    }
+`
+
+export const SendBtn = styled(Button)`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 45.92592vw;
+  bottom: calc(-4.1666% - 8px);
+  max-width: 250px;
+  background-color: ${({disabled}) => disabled ? '#c26546' : colors.orange};
+  transition: background-color 0.5s;
+  transform-origin: 50% 50%;
+  animation: ${sending} ${({animation}) => animation ?  '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86)
+`;
+
+export const SkipBtn = styled(SmallLightText)`
+    margin-top: 7%;
 `
