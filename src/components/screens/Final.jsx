@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useResult } from '../../hocs/useResult';
 import { Notification } from '../shared/Notification';
 import { useProgress } from '../../hooks/useProgress';
 import { ItsAMatch } from '../shared/svg/ItsAMatch';
 import { getStyledSvg } from '../shared/styledSvg';
-import { AddictiveText, ColoredText, RegularDescription, RegularText, Title } from '../shared/styledTexts';
+import { ColoredText, RegularDescription, Title } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { ImportantMark } from '../shared/svg/ImportantMark';
 
 const Wrapper = styled.div`
   padding-top: 17.7083vh;
+  @media screen and (max-height: 550px) {
+    padding-top: 15vh;
+  }
 `;
 
 const MatchWrapper = styled.div`
@@ -29,12 +32,13 @@ const MatchTextWrapper = styled.div`
 `;
 
 const MatchText = styled(ItsAMatch)`
-    width: 100%;
+  width: 100%;
 `;
 
 const MatchTitle = styled(ColoredText)`
   font-size: 28px;
   text-transform: uppercase;
+  font-weight: 700;
 `;
 
 const CommunicationWrapper = styled.div`
@@ -42,11 +46,15 @@ const CommunicationWrapper = styled.div`
   border-radius: 5px;
   background: #F4F4F5;
   padding: 3.208vh 6.2592vw;
+
+  @media screen and (max-height: 550px) {
+    margin: 2.1842vh 9.2592vw;
+  }
 `;
 
 const TitleStyled = styled(Title)`
-    margin-bottom: 18px;
-`
+  margin-bottom: 18px;
+`;
 
 const ImportantWrapper = styled.div`
   display: flex;
@@ -61,7 +69,7 @@ const ImportantSignWrapper = styled.div`
   width: 2.5vw;
   max-width: 27px;
   margin-right: 4.6296vw;
-  
+
   @media screen and (min-width: 1000px) {
     margin-right: 20px;
   }
@@ -72,23 +80,35 @@ const ImportantSign = getStyledSvg(ImportantMark);
 export const Final = () => {
     const result = useResult();
     const {next} = useProgress();
-    const [notif, setNotif] = useState({});
+    const [notification, setNotification] = useState({});
+    const [pulseNotification, setPulseNotification] = useState(false);
 
     useEffect(() => {
         const timeOutId = setTimeout(() => {
-            setNotif({text: 'Тебе поставили супер-лайк!'})
-        }, 1000);
-        return () => clearTimeout(timeOutId);
-    }, [])
+            setNotification({text: 'Тебе поставили супер-лайк!'});
+        }, 2500);
+        const timeOutPulseNotification = setTimeout(() => {
+            setPulseNotification(true);
+        }, 3300);
+        return () => {
+            setPulseNotification(false);
+            clearTimeout(timeOutId);
+            clearTimeout(timeOutPulseNotification);
+        };
+    }, []);
     return (
         <Wrapper>
-            {notif.text && <Notification text={notif.text} onClick={next}/>}
+            {notification.text && <Notification
+                animated={pulseNotification}
+                text={notification.text}
+                onClick={next}
+            />}
             <MatchWrapper>
                 <MatchTextWrapper>
-                    <MatchText />
+                    <MatchText/>
                 </MatchTextWrapper>
                 <MatchTitle color={'red'}>ТЫ</MatchTitle>
-                <Title>&</Title>
+                <Title><ColoredText color={'#797E8B'}>&</ColoredText></Title>
                 <MatchTitle color={colors.purple}>{result.label}</MatchTitle>
             </MatchWrapper>
             <CommunicationWrapper>
@@ -104,5 +124,5 @@ export const Final = () => {
                 </RegularDescription>
             </ImportantWrapper>
         </Wrapper>
-    )
-}
+    );
+};

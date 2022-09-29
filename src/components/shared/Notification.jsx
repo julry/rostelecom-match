@@ -21,6 +21,20 @@ const scaleGrow = keyframes`
   }
 `;
 
+const pulse = keyframes`
+  0% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+`;
+
 const Wrapper = styled.div`
   height: 9.8645vh;
   width: 90.7407vw;
@@ -32,6 +46,7 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   animation: ${appear} .75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  min-height: 60px;
 `;
 
 const Container = styled.div`
@@ -42,9 +57,16 @@ const Container = styled.div`
   cursor: pointer;
   overflow: hidden;
   will-change: transform;
-  animation: ${scaleGrow} .75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   height: 100%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+`;
+
+const StartAnimationWrapper = styled(Container)`
+    animation: ${scaleGrow} .75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+`;
+
+const PulseAnimationWrapper = styled(Container)`
+    animation: ${pulse} 2s infinite;
 `;
 
 const Content = styled.div`
@@ -69,17 +91,18 @@ const LikeIconWrapper = styled.div`
 const LikeIcon = getStyledSvg(Like);
 
 export const Notification = (props) => {
-    const {text, onClick} = props;
+    const {text, onClick, animated} = props;
+    const ContainerContent = animated ? PulseAnimationWrapper : StartAnimationWrapper;
     return (
         <Wrapper onClick={onClick}>
-            <Container>
+            <ContainerContent>
                 <Body>
                     <LikeIconWrapper>
                         <LikeIcon/>
                     </LikeIconWrapper>
                     <Content>{text}</Content>
                 </Body>
-            </Container>
+            </ContainerContent>
         </Wrapper>
     );
 };

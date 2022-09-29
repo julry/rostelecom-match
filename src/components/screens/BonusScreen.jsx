@@ -48,7 +48,10 @@ const ColoredTitle = styled(ColoredText)`
 `;
 
 const MatchWrapper = styled.div`
-    margin: 1.8142vh 0;
+  margin: 1.8142vh 0;
+  @media screen and (max-height: 550px) {
+    margin: 1.1842vh 0;
+  }
 `;
 
 const ButtonBlock = styled.div`

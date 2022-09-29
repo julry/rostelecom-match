@@ -46,6 +46,10 @@ const Sentence = styled(BoldText)`
   @media screen and (min-width: 1000px) {
     font-size: 22px;
   }
+
+  @media screen and (max-height: 500px){
+    margin-top: 3.5vh;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -54,6 +58,9 @@ const ImageWrapper = styled.div`
   margin-top: auto; 
   width: 100%;
   height: 36.4583vh;
+  @media screen and (max-height: 500px){
+    height: 32.4231vh;
+  }
 `
 const Image = styled.img`
   width: 100%;
