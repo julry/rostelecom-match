@@ -221,10 +221,11 @@ export const SendBtn = styled(Button)`
   width: 45.92592vw;
   bottom: calc(-4.1666% - 8px);
   max-width: 250px;
+  min-width: 150px;
   background-color: ${({disabled}) => disabled ? '#c26546' : colors.orange};
   transition: background-color 0.5s;
   transform-origin: 50% 50%;
-  animation: ${sending} ${({animation}) => animation ?  '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86)
+  animation: ${sending} ${({animation}) => animation ?  '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
 `;
 
 export const SkipBtn = styled(SmallLightText)`
