@@ -32,7 +32,7 @@ const MobileViewStyled = styled(MobileView)`
 `;
 const MobileViewLandscaped = styled(MobileView)`
   display: none;
-  @media screen and (orientation: landscape) and (max-height: 640px) {
+  @media screen and (orientation: landscape) and (max-height: 640px) and (min-width: 400px){
     display: block;
     width: 100%;
     height: 100%;

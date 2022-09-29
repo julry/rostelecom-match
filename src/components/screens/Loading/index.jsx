@@ -78,7 +78,7 @@ export const Loading = () => {
                 <StyledCard>
                     <DescriptionStyled>
                         Обещаем, что будем использовать его только для оповещения о выигрыше{'\n'}
-                        Свайпай <ColoredText color={'red'}>влево</ColoredText>, если <ColoredText color={'red'}>не хочешь</ColoredText> получить мерч от Ростелекома
+                        {/*Свайпай <ColoredText color={'red'}>влево</ColoredText>, если <ColoredText color={'red'}>не хочешь</ColoredText> получить мерч от Ростелекома*/}
                     </DescriptionStyled>
                     <Form>
                         <InputWrapper>
