@@ -39,6 +39,7 @@ const TextBold = styled(BoldText)`
 const QrWrapper = styled(FlexWrapper)`
   align-items: center;
   margin-top: 50px;
+  margin-left: -10px;
 `;
 
 const ImageWrapper = styled(FlexWrapper)`
