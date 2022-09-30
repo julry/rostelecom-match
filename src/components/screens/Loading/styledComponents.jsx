@@ -224,7 +224,7 @@ export const SendBtn = styled(Button)`
   width: 100%;
   max-width: 307px;
   min-width: 150px;
-  background-color: ${({disabled}) => disabled ? '#c26546' : colors.orange};
+  background-color: ${({disabled}) => disabled ? '#FF9D7B' : colors.orange};
   transition: background-color 0.5s;
   transform-origin: 50% 50%;
   animation: ${sending} ${({animation}) => animation ? '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
