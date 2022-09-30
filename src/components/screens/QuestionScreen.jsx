@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const StyledCard = styled(SwipeCard)`
-  height: 61.4583vh;
+  height: 59.4583vh;
   max-height: 1180px;
   
   @media screen and (max-height: 500px){
