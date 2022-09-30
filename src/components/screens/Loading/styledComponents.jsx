@@ -22,6 +22,7 @@ export const StyledCard = styled.div`
 export const Wrapper = styled.div`
   padding-top: 30.7083%;
   height: 100%;
+  width: 100%;
 
   @media screen and (max-height: 550px) {
     padding-top: 28.7083%;

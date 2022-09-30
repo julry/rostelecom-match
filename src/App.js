@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
-import { isDesktop, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 import { ProgressProvider } from './context/ProgressContext';
 import { useProgressInit } from './hooks/useProgressInit';
 import { preloadImage } from './utils/preloadImage';
@@ -135,7 +135,7 @@ function App() {
                         </MobileViewLandscaped>
                     </ComponentWrapper>
                 )}
-                {isDesktop && !isMobile && (
+                {!isMobile && (
                     <InfoScreen direction={'column'}>
                         <InfoBackground/>
                         <InfoQr />

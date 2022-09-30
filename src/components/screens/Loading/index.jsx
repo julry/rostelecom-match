@@ -73,7 +73,7 @@ export const Loading = () => {
         <Wrapper>
             <BackgroundStyled/>
             <StyledTitle>
-                Оставь свой номер телефона, чтобы участвовать в розыгрыше призов!
+                Оставь свой номер телефона, чтобы{'\n'}участвовать в розыгрыше призов!
             </StyledTitle>
             <CardWrapper>
                 <StyledCard>
@@ -127,7 +127,7 @@ export const Loading = () => {
                 >
                     Сохранить номер
                 </SendBtn>
-                <SkipBtn onClick={onSkip}>Пропустить</SkipBtn>
+                <SkipBtn onClick={onSkip}>Не хочу оставлять</SkipBtn>
             </BtnsBlock>
             {sendingMessage?.text && (
                 <Modal text={sendingMessage.text} icon={sendingMessage.icon} />
