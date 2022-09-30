@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useResult } from '../../hocs/useResult';
 import { Notification } from '../shared/Notification';
 import { useProgress } from '../../hooks/useProgress';
@@ -11,6 +11,7 @@ import { ImportantMark } from '../shared/svg/ImportantMark';
 
 const Wrapper = styled.div`
   padding-top: 17.7083vh;
+  
   @media screen and (max-height: 550px) {
     padding-top: 15vh;
   }
@@ -36,7 +37,7 @@ const MatchText = styled(ItsAMatch)`
 `;
 
 const MatchTitle = styled(ColoredText)`
-  font-size: 28px;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: 700;
 `;
@@ -90,6 +91,7 @@ export const Final = () => {
         const timeOutPulseNotification = setTimeout(() => {
             setPulseNotification(true);
         }, 3300);
+
         return () => {
             setPulseNotification(false);
             clearTimeout(timeOutId);

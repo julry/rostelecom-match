@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ManWrapper = styled.div`
-  padding-top: 2.9687vh;
+  padding-top: 4.2687vh;
   width: 30vw;
   max-width: 314px;
   min-width: 16.3538vh;
@@ -92,7 +92,7 @@ export const ThinkText = styled(MediumText)`
 
 export const SmallText = styled(LightText)`
   position: absolute;
-  font-size: 7px;
+  font-size: 8px;
   bottom: -20px;
   left: 12.8248%;
 

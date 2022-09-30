@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../../constants/colors';
-import { Title } from './styledTexts';
+import { MediumText } from './styledTexts';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -17,7 +17,7 @@ const BackgroundModal = styled(Wrapper)`
   background: white;
   filter: blur(10px);
   z-index: 1;
-`
+`;
 
 const ContentWrapper = styled.div`
   position: absolute;
@@ -40,8 +40,17 @@ const Icon = styled.div`
   width: 18.2609%;  
   height: 4.2708vh;
   margin-bottom: 15px;
+  
   & svg {
     height: 100%;
+  }
+`;
+
+const TextStyled = styled(MediumText)`
+  font-size: 14px;
+  
+  @media screen and (min-width: 1000px){
+    font-size: 16px;
   }
 `;
 
@@ -54,7 +63,7 @@ export const Modal = (props) => (
                     {props.icon()}
                 </Icon>
             )}
-            <Title>{props.text}</Title>
+            <TextStyled>{props.text}</TextStyled>
         </ContentWrapper>
     </Wrapper>
-)
+);

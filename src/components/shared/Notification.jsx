@@ -72,6 +72,11 @@ const PulseAnimationWrapper = styled(Container)`
 const Content = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 17px;
+  
+  @media screen and (max-width: 330px){
+    font-size: 15px;
+  }
 `;
 
 const Body = styled.div`

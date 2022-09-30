@@ -35,16 +35,18 @@ export const Label = styled(RegularText)`
   @media screen and (min-width: 1000px) {
     font-size: 15px;
   }
-`
+`;
+
 export const StyledTitle = styled(Title)`
-    margin-left: 9.2592%;
+  font-size: 16px;
+  margin-left: 9.2592%;
 `;
 
 export const Form = styled.div`
   position: relative;
   z-index: 3;
   padding: 5.2083% 0;
-  
+
   @media screen and (min-width: 1000px) {
     display: flex;
     height: 100%;
@@ -53,21 +55,21 @@ export const Form = styled.div`
 `;
 
 export const Input = styled.input`
-    border-radius: 5px;
-    touch-action: none;
-    border: none;
-    padding-right: 5px;
-    font-size: 15px;
-    background: inherit;
-    width:100%;
-    font-family: 'RostelecomBasis', Tahoma, Geneva, sans-serif;
-    
-    &:focus{ 
-        outline: none;
-    }
+  border-radius: 5px;
+  touch-action: none;
+  border: none;
+  padding-right: 5px;
+  font-size: 18px;
+  background: inherit;
+  width: 100%;
+  font-family: 'RostelecomBasis', Tahoma, Geneva, sans-serif;
 
-  @media screen and (min-width: 1000px) {
-    font-size: 17px;
+  &:focus {
+    outline: none;
+  }
+
+  @media screen and (max-width: 330px) {
+    font-size: 15px;
   }
 `;
 
@@ -83,7 +85,7 @@ export const RadioIconStyled = styled.div`
   border: 1px solid #B5B7C0;
   border-radius: 2px;
   margin-right: 10px;
-  
+
   @media screen and (min-width: 1000px) {
     width: 24px;
     height: 24px;
@@ -99,7 +101,7 @@ export const LabelStyled = styled.label`
   @media screen and (min-width: 1000px) {
     margin-top: auto;
   }
-  
+
   & ${InputCheckboxStyled}:checked + ${RadioIconStyled}:after {
     content: '';
     position: absolute;
@@ -126,22 +128,22 @@ export const TextWrapperStyled = styled.div`
 export const TextStyled = styled(LightText)`
   font-family: 'LabGrotesque', serif;
   color: #797E8B;
-  font-size: 9px;
+  font-size: 7px;
 
   @media screen and (min-width: 1000px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
 export const CardWrapper = styled.div`
-  margin: 5.8125% 0 24.1666%;
+  margin: 5.8125% 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 35.9375%;
   min-height: 240px;
 
-  @media screen and (max-height: 550px){
+  @media screen and (max-height: 550px) {
     min-height: 190px;
   }
 `;
@@ -151,16 +153,16 @@ export const PersonalDataLink = styled.span`
 `;
 
 export const DescriptionStyled = styled(RegularText)`
-    font-size: 13px;
-  
-  @media screen and (max-width: 330px){
-    font-size: 11px;
+  font-size: 11px;
+
+  @media screen and (max-width: 330px) {
+    font-size: 9px;
   }
 
   @media screen and (min-width: 1000px) {
-    font-size: 17px;
+    font-size: 16px;
   }
-`
+`;
 
 export const InputWrapper = styled.div`
   padding: 10px;
@@ -168,15 +170,14 @@ export const InputWrapper = styled.div`
   background: #F4F4F5;
 `;
 
-
 const rotate = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const LoadingStyled = styled(LoadingIcon)`
   min-width: 20px;
@@ -189,11 +190,10 @@ export const LoadingStyled = styled(LoadingIcon)`
   animation: ${rotate} 2.5s infinite linear;
 `;
 
-
 export const LoadingWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 20% auto 5%;
+  margin: 0 auto;
   width: calc(8.7037vw + 210px);
 `;
 
@@ -207,41 +207,36 @@ export const LoadingText = styled(AddictiveText)`
   }
 `;
 
-
-export const DummyCard = styled.div`
-  height: 46.2625%;
-  min-height: 240px;
-  @media screen and (max-height: 550px) {
-    min-height: 190px;
+const sending = keyframes`
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.06;
+  }
+  100% {
+    scale: 1;
   }
 `;
 
-const sending = keyframes`
-    0% {
-      scale: 1;
-    }
-    50%{
-      scale: 1.06;
-    }
-    100% {
-      scale: 1;
-    }
-`
-
 export const SendBtn = styled(Button)`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 45.92592vw;
-  bottom: calc(-4.1666% - 8px);
-  max-width: 250px;
+  width: 100%;
+  max-width: 307px;
   min-width: 150px;
   background-color: ${({disabled}) => disabled ? '#c26546' : colors.orange};
   transition: background-color 0.5s;
   transform-origin: 50% 50%;
-  animation: ${sending} ${({animation}) => animation ?  '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  animation: ${sending} ${({animation}) => animation ? '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
 `;
 
 export const SkipBtn = styled(SmallLightText)`
-    margin-top: 7%;
-`
+  margin-top: 10px;
+  text-decoration: underline;
+`;
+
+export const BtnsBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9.9956%;
+`;

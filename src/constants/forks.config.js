@@ -145,4 +145,4 @@ export const forks = [
         order: [5, 3, 4],
         priority: answerTypes.marketing
     },
-]
+];
