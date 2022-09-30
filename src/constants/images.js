@@ -11,7 +11,7 @@ import card10 from "../static/images/card10.png";
 import card11 from "../static/images/card11.png";
 import startMan from "../static/images/startMan.png";
 import phoneImg from "../static/images/phone.png";
-import qrLogo from "../static/images/qrLogo.svg";
+import qrLogo from "../static/images/qrLogo.png";
 
 export {
     card1,
