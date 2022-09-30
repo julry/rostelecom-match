@@ -1,32 +1,34 @@
 {
   "files": {
     "main.css": "./static/css/main.0b99d99d.css",
-    "main.js": "./static/js/main.1cebf422.js",
-    "static/media/card4.png": "./static/media/card4.e904de07ab3263b02674.png",
-    "static/media/card5.png": "./static/media/card5.6a18328f001fcbfa5d0e.png",
-    "static/media/card3.png": "./static/media/card3.3f5f93e5a46e47de46f5.png",
-    "static/media/card6.png": "./static/media/card6.3d0919a312f6189aacf0.png",
-    "static/media/card9.png": "./static/media/card9.faeb3461e70a379cfb84.png",
-    "static/media/card7.png": "./static/media/card7.3c4a77512a7ef3267872.png",
-    "static/media/card8.png": "./static/media/card8.80f68331ffaadeacdd7e.png",
-    "static/media/card2.png": "./static/media/card2.784e1a06d080b5d1687c.png",
-    "static/media/card1.png": "./static/media/card1.1b12a5b458fa6796f448.png",
-    "static/media/card11.png": "./static/media/card11.6145bf63decd2e114520.png",
-    "static/media/card10.png": "./static/media/card10.1b77ed1658214e6edffd.png",
-    "static/media/startMan.png": "./static/media/startMan.3da5a302ab142200c98e.png",
+    "main.js": "./static/js/main.dc0b20d0.js",
+    "static/media/card4.png": "./static/media/card4.b44a48fbd2cd5dbdc979.png",
+    "static/media/card3.png": "./static/media/card3.048eb69d7e7812099e3c.png",
+    "static/media/card7.png": "./static/media/card7.c5ce3ca68550dd42c803.png",
+    "static/media/card6.png": "./static/media/card6.adea4618d35f04fc3359.png",
+    "static/media/card5.png": "./static/media/card5.662fdbfe2af3ef16287d.png",
+    "static/media/card8.png": "./static/media/card8.e407eaafaad5666cc986.png",
+    "static/media/card9.png": "./static/media/card9.02cacb0725094bef60fd.png",
+    "static/media/card1.png": "./static/media/card1.bf96b6d4f7641387807e.png",
+    "static/media/card2.png": "./static/media/card2.ae4bbc3bcd2bf0c84551.png",
+    "static/media/card10.png": "./static/media/card10.72f819bc0e937596ff1d.png",
+    "static/media/card11.png": "./static/media/card11.542d080d22e2930905cb.png",
     "static/media/RostelecomBasis-Bold.otf": "./static/media/RostelecomBasis-Bold.d019413c789f015fb5fc.otf",
     "static/media/RostelecomBasis-Medium.otf": "./static/media/RostelecomBasis-Medium.5e78446fd5e17870de26.otf",
     "static/media/RostelecomBasis-Regular.otf": "./static/media/RostelecomBasis-Regular.8283eaf35976e84bf84b.otf",
     "static/media/RostelecomBasis-Light.otf": "./static/media/RostelecomBasis-Light.87527535ae56c1a745b3.otf",
     "static/media/LabGrotesque-Light.ttf": "./static/media/LabGrotesque-Light.df3fbcdca778d26bdc58.ttf",
+    "static/media/phone.png": "./static/media/phone.def6465ae24167ac7222.png",
+    "static/media/startMan.png": "./static/media/startMan.d18097d20c1eaa08b2f9.png",
     "static/media/LabGrotesque-Light.woff": "./static/media/LabGrotesque-Light.d032250e8bff240c6e9d.woff",
     "static/media/LabGrotesque-Light.woff2": "./static/media/LabGrotesque-Light.098291affdb12aefd649.woff2",
     "index.html": "./index.html",
+    "static/media/qrLogo.svg": "./static/media/qrLogo.dbdb9e471bf454711d1d5913f3a4916b.svg",
     "main.0b99d99d.css.map": "./static/css/main.0b99d99d.css.map",
-    "main.1cebf422.js.map": "./static/js/main.1cebf422.js.map"
+    "main.dc0b20d0.js.map": "./static/js/main.dc0b20d0.js.map"
   },
   "entrypoints": [
     "static/css/main.0b99d99d.css",
-    "static/js/main.1cebf422.js"
+    "static/js/main.dc0b20d0.js"
   ]
 }
