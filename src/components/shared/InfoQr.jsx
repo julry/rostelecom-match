@@ -58,8 +58,8 @@ export const InfoQr = () => {
     const ref = useRef();
     useEffect(() => {
         const qrCode = new QRCodeStyling({
-            width: 145,
-            height: 145,
+            width: 200,
+            height: 200,
             image: qrLogo,
             dotsOptions: {
                 color: colors.purple,
