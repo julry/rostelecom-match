@@ -41,7 +41,7 @@ const Sentence = styled(BoldText)`
   margin: 5.2vh 5.2592vw 0 9.2592vw;
   
   @media screen and (max-width: 330px){
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media screen and (min-width: 1000px) {
@@ -59,10 +59,12 @@ const ImageWrapper = styled.div`
   margin-top: auto; 
   width: 100%;
   height: 36.4583vh;
+
   @media screen and (max-height: 500px){
     height: 32.4231vh;
   }
-`
+`;
+
 const Image = styled.img`
   width: 100%;
   max-height: 100%;
