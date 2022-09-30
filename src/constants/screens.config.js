@@ -37,4 +37,4 @@ export const screens = [
         component: BonusScreen,
         preloadImages: [],
     }
-]
+];

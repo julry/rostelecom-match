@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import QRCode from 'react-qr-code';
 import styled from 'styled-components';
-import { BrowserView, isDesktop, MobileView, isMobile } from 'react-device-detect';
+import { isDesktop, isMobile } from 'react-device-detect';
 import { ProgressProvider } from './context/ProgressContext';
 import { useProgressInit } from './hooks/useProgressInit';
 import { preloadImage } from './utils/preloadImage';
@@ -9,7 +8,7 @@ import { Logo } from './components/shared/svg/Logo';
 import { Title } from './components/shared/styledTexts';
 import { Orientation } from './components/shared/svg/Orientation';
 import { BackgroundStyled } from './components/shared/BackgroundStyled';
-import { colors } from './constants/colors';
+import { InfoQr } from './components/shared/InfoQr';
 
 const Wrapper = styled.div`
   ${({styles}) => styles};
@@ -20,6 +19,7 @@ const Wrapper = styled.div`
 
 const MobileViewLandscaped = styled.div`
   display: none;
+  
   @media screen and (orientation: landscape) and (max-height: 640px) and (min-width: 400px) {
     display: block;
     background-color: white;
@@ -80,10 +80,6 @@ const InfoBackground = styled(BackgroundStyled)`
   }
 `;
 
-const QRCodeStyled = styled(QRCode)`
-  margin-top: 30px;
-`;
-
 function App() {
     const [height, setHeight] = useState('100vh');
     const progress = useProgressInit();
@@ -124,11 +120,11 @@ function App() {
     return (
         <ProgressProvider value={progress}>
             <Wrapper styles={{height}}>
-                <LogoWrapper>
-                    <Logo/>
-                </LogoWrapper>
                 {isMobile && (
                     <ComponentWrapper ref={wrapperRef}>
+                        <LogoWrapper>
+                            <Logo/>
+                        </LogoWrapper>
                         <Component/>
                         <MobileViewLandscaped>
                             <InfoScreen direction={'row'}>
@@ -142,8 +138,7 @@ function App() {
                 {isDesktop && !isMobile && (
                     <InfoScreen direction={'column'}>
                         <InfoBackground/>
-                        <Title>Пожалуйста, воспользуйся телефоном :)</Title>
-                        <QRCodeStyled value={window.location.href} fgColor={colors.orange}/>
+                        <InfoQr />
                     </InfoScreen>
                 )}
             </Wrapper>

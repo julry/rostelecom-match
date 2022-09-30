@@ -10,7 +10,8 @@ import card9 from "../static/images/card9.png";
 import card10 from "../static/images/card10.png";
 import card11 from "../static/images/card11.png";
 import startMan from "../static/images/startMan.png";
-
+import phoneImg from "../static/images/phone.png";
+import qrLogo from "../static/images/qrLogo.svg";
 
 export {
     card1,
@@ -24,5 +25,7 @@ export {
     card9,
     card10,
     card11,
-    startMan
+    startMan,
+    qrLogo,
+    phoneImg
 };

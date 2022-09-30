@@ -3,4 +3,4 @@ export const answerTypes = {
     HR: 'HR',
     IT: 'IT',
     B2B: 'B2B'
-}
+};

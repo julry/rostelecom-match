@@ -17,7 +17,8 @@ const ButtonsContainer = styled.div`
 const getArrowStyled = (Arrow) => styled(Arrow)`
   width: 54px;
   height: 25px;
-`
+`;
+
 const ArrowLeftStyled = getArrowStyled(ArrowLeft);
 const ArrowRightStyled = getArrowStyled(ArrowRight);
 
@@ -28,12 +29,13 @@ export const SwipeBtns = (props) => {
         if (canSwipe) {
             await cardRef.current.swipe(dir)
         }
-    }
+    };
+
     return (
         <ButtonsContainer className={props.className}>
             <ArrowLeftStyled onClick={() => onClick('left')}/>
             {props.children}
             <ArrowRightStyled onClick={() => onClick('right')} />
         </ButtonsContainer>
-    )
-}
+    );
+};

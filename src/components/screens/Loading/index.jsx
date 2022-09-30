@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useIMask } from 'react-imask';
 import { useProgress } from '../../../hooks/useProgress';
 import {
-    CardWrapper, DescriptionStyled, DummyCard,
+    BtnsBlock,
+    CardWrapper, DescriptionStyled,
     Form,
     Input, InputCheckboxStyled, InputWrapper, Label,
     LabelStyled, LoadingStyled, LoadingText, LoadingWrapper,
@@ -13,10 +14,10 @@ import {
 } from './styledComponents';
 import { sendDataToForms } from '../../../utils/sendDataToForms';
 import { openHref } from '../../../utils/openHref';
-import { ColoredText } from '../../shared/styledTexts';
 import { Modal } from '../../shared/Modal';
 import { DoneMark } from '../../shared/svg/DoneMark';
 import { BackgroundStyled } from '../../shared/BackgroundStyled';
+import { ErrorMark } from '../../shared/svg/ErrorMark';
 
 export const Loading = () => {
     const {next} = useProgress();
@@ -36,10 +37,10 @@ export const Loading = () => {
             setTimeout(() => {
                 next();
             }, 3000);
-            setSendingMessage({text: 'Сохранено', success: true});
+            setSendingMessage({text: 'Телефон\nсохранён', success: true, icon: DoneMark});
         }
         else {
-            setSendingMessage({text: 'Ой, что-то пошло не так, попробуй снова', success: false});
+            setSendingMessage({text: 'Ой, попробуй\nещё раз', success: false, icon: ErrorMark});
             setTimeout(() => {
                 setSendingMessage({});
             }, 3000);
@@ -77,8 +78,8 @@ export const Loading = () => {
             <CardWrapper>
                 <StyledCard>
                     <DescriptionStyled>
-                        Обещаем, что будем использовать его только для оповещения о выигрыше{'\n'}
-                        {/*Свайпай <ColoredText color={'red'}>влево</ColoredText>, если <ColoredText color={'red'}>не хочешь</ColoredText> получить мерч от Ростелекома*/}
+                        Обещаем, что будем использовать его только для оповещения о выигрыше.{'\n'}
+                        Если не хочешь мерч от Ростелекома – можно пропустить этот этап
                     </DescriptionStyled>
                     <Form>
                         <InputWrapper>
@@ -112,22 +113,24 @@ export const Loading = () => {
                             </TextWrapperStyled>
                         </LabelStyled>
                     </Form>
-                    <SendBtn
-                        disabled={!phone?.length || !agreement}
-                        animation={loading}
-                        onClick={onSubmit}
-                    >
-                        Сохранить номер
-                    </SendBtn>
                 </StyledCard>
-                <SkipBtn onClick={onSkip}>Пропустить</SkipBtn>
             </CardWrapper>
             <LoadingWrapper>
                 <LoadingStyled />
                 <LoadingText>Руководители пока смотрят, с кем у тебя произошёл тотал мэтч</LoadingText>
             </LoadingWrapper>
+            <BtnsBlock>
+                <SendBtn
+                    disabled={!phone?.length || !agreement}
+                    animation={loading}
+                    onClick={onSubmit}
+                >
+                    Сохранить номер
+                </SendBtn>
+                <SkipBtn onClick={onSkip}>Пропустить</SkipBtn>
+            </BtnsBlock>
             {sendingMessage?.text && (
-                <Modal text={sendingMessage.text} icon={DoneMark} />
+                <Modal text={sendingMessage.text} icon={sendingMessage.icon} />
             )}
         </Wrapper>
     )

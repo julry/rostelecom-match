@@ -33,10 +33,11 @@ const StyledContent = styled.div`
 
 const CardCount = styled(MediumText)`
   margin: 2.6vh 0 0 2.6vh;
+  font-size: 14px;
 `;
 
 const Sentence = styled(BoldText)`
-  font-size: 20px;
+  font-size: 19px;
   margin: 5.2vh 5.2592vw 0 9.2592vw;
   
   @media screen and (max-width: 330px){
@@ -83,6 +84,7 @@ export const SwipeCard = (props) => {
             </ImageWrapper>
         )}
     </>);
+
     return (
         <StyledCard
             isBackgroundCard={isBackgroundCard}

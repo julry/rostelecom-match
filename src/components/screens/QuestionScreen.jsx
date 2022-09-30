@@ -38,7 +38,7 @@ export const QuestionScreen = () => {
         () =>
             Array(cards.length)
                 .fill(0)
-                .map((i) => React.createRef()),
+                .map(() => React.createRef()),
         []
     );
 

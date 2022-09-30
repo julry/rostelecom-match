@@ -66,10 +66,7 @@ const StyledButton = styled(Button)`
 
 const SmallText = styled(SmallLightText)`
   text-align: center;
-
-  @media screen and (max-width: 330px) {
-    font-size: 9px;
-  }
+  font-size: 9px;
 `;
 
 const Description = styled(RegularDescription)`
@@ -154,6 +151,6 @@ export const BonusScreen = () => {
             </StyledButton>
             <SmallText>Вдруг вас сведет судьба в Ростелекоме</SmallText>
         </ButtonBlock>
-        {copyReadyModal && <Modal text={'Скопировано'} icon={DoneMark}/>}
+        {copyReadyModal && <Modal text={'Ссылка\nскопирована'} icon={DoneMark}/>}
     </Wrapper>);
 };

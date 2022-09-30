@@ -4,7 +4,6 @@ import { forks } from '../constants/forks.config';
 import { screens } from '../constants/screens.config';
 import { getCardById } from '../utils/getCardById'
 
-
 const getCardsByFork = (fork) => {
     const cardsByFork = [...cards];
     const dependentCards = cards.filter(card => card.type === CARD_TYPES.dependent);
@@ -41,7 +40,6 @@ export function useProgressInit() {
         }
     };
 
-
     const updateCards = () => {
         const answers = {...progress.answers};
         const availableForks = forks.filter(fork => fork.answers
@@ -54,7 +52,7 @@ export function useProgressInit() {
                 fork: availableForks[0]
             })
         );
-    }
+    };
 
     const updateAnswer = (name, value) => {
         setProgress(progress => {

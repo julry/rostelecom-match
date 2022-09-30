@@ -19,6 +19,7 @@ export const DescriptiveScreen = () => {
     const onSwipe = (side) => {
         if (side === 'right') next();
     }
+
     return (
         <Wrapper>
             <BackgroundStyled />
