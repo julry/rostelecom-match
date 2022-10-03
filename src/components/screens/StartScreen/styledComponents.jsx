@@ -70,6 +70,10 @@ export const ThinkWrapper = styled.div`
     top: 10.1777%;
     left: 30.5%;
   }
+
+  @media screen and (max-width: 320px) and (min-height: 600px){
+    height: 8.4562vh;
+  }
 `;
 
 export const ThinkCloudStyled = getStyledSvg(ThinkingCloud);
@@ -79,8 +83,8 @@ export const ThinkText = styled(MediumText)`
   position: absolute;
   top: 31%;
   left: 12.8248%;
-  @media screen and (max-width: 300px){
-    left: 18%;
+  @media screen and (max-width: 320px) and (min-height: 600px){
+    left: 25%;
     font-size: 8px;
   }
 
@@ -91,15 +95,17 @@ export const ThinkText = styled(MediumText)`
 `;
 
 export const SmallText = styled(LightText)`
-  position: absolute;
   font-size: 8px;
-  bottom: -20px;
-  left: 12.8248%;
+  margin-left: 12.8248%;
 
   @media screen and (min-width: 1000px) {
     font-size: 10px;
-    bottom: -30px;
-    left: 5.5%;
+    margin-left: 5.5%;
+  }
+
+  @media screen and (max-width: 320px) and (min-height: 600px){
+    font-size: 7px;
+    margin-left: 25%;
   }
 `;
 
