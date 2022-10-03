@@ -53,7 +53,8 @@ export const forks = [
             }
         ],
         order: [3, 6, 5],
-        priority: answerTypes.IT
+        priority: answerTypes.IT,
+        alwaysPriority: true
     },
     {
         answers: [
@@ -71,7 +72,8 @@ export const forks = [
             }
         ],
         order: [3, 6, 4],
-        priority: answerTypes.IT
+        priority: answerTypes.IT,
+        alwaysPriority: true
     },
     {
         answers: [

@@ -38,7 +38,7 @@ export const useResult = () => {
     const finalTypes = Object.keys(resultPoints).filter(key => resultPoints[key] === maxPoints);
     let resultType = finalTypes[0];
     if (finalTypes.length > 1) {
-        if (resultPoints[finalTypes[0]] === MAX_CONTROVERSIAL_POINTS) {
+        if (resultPoints[finalTypes[0]] === MAX_CONTROVERSIAL_POINTS || fork.alwaysPriority) {
             resultType = fork.priority;
         } else {
             resultType = finalTypes.find(type => type !== fork.priority);
