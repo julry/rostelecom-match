@@ -22,13 +22,13 @@ const ContentWrapper = styled.div`
 `;
 
 const Title = styled(BoldText)`
-    font-size: 42px;
+  font-size: 42px;
 `;
 
 const Description = styled(MediumText)`
   font-size: 16px;
   margin-top: 15px;
-  max-width: 390px;
+  max-width: 415px;
 `;
 
 const TextBold = styled(BoldText)`
@@ -88,11 +88,15 @@ export const InfoQr = () => {
             <ContentWrapper>
                 <Title>Привет!</Title>
                 <Description>
-                    До карьеры мечты осталось всего несколько свайпов. Скорее открывай игру на телефоне
-                    {'\n'}и отправляйся на поиски идеальной команды.
+                    До карьеры мечты осталось всего несколько свайпов!{'\n'}
+                    Открывай игру на телефоне, отвечай на вопросы{'\n'}и находи мэтч с идеальной командой Ростелекома.
+                    {'\n'}
                 </Description>
                 <Description>
-                    <b>Сканируй QR-код ниже или копируй себе ссылку</b>{'\n'}{window.location.href}
+                    <b>Сканируй QR-код ниже или копируй себе ссылку</b>
+                </Description>
+                <Description>
+                    {window.location.href}
                 </Description>
                 <QrWrapper>
                     <div ref={ref} />
