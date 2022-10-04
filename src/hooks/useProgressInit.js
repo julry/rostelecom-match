@@ -30,6 +30,13 @@ export function useProgressInit() {
     const [currentScreenIndex, setCurrentScreenIndex] = useState(+screenParam || 0);
     const screen = screens[currentScreenIndex];
 
+    const setPrev = () => {
+        const canSet = currentScreenIndex > 0;
+        if (canSet) {
+            setCurrentScreenIndex(currentScreenIndex - 1);
+        }
+    };
+
     const next = () => {
         const nextScreenIndex = currentScreenIndex + 1;
         const canNext = nextScreenIndex <= screens.length - 1;
@@ -76,6 +83,7 @@ export function useProgressInit() {
         screen,
         next,
         updateAnswer,
+        setPrev,
         updateProgress,
         updateCards
     };
