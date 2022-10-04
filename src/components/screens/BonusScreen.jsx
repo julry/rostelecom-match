@@ -6,7 +6,7 @@ import { Button } from '../shared/Button';
 import styled from 'styled-components';
 import {
     AddictiveText,
-    ColoredText, MediumText,
+    ColoredText,
     RegularDescription,
     SmallLightText,
     Title
@@ -147,7 +147,7 @@ export const BonusScreen = () => {
         <Wrapper>
             <ReturnBtn onClick={setPrev}>
                 <ReturnIcon/>
-                <ReturnText>Вернуться к мэтчу</ReturnText>
+                <ReturnText>Вернуться к мэтчу с командой</ReturnText>
             </ReturnBtn>
             <Title>
                 Вау… тут явно есть все шансы на совместное будущее!
