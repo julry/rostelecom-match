@@ -14,11 +14,13 @@ import {
     ThinkWrapper,
     Wrapper
 } from './styledComponents';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
 export const StartScreen = () => {
     const {next} = useProgress();
 
     const onStart = () => {
+        reachMetrikaGoal('start')
         next();
     };
 

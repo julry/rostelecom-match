@@ -8,6 +8,7 @@ import { getStyledSvg } from '../shared/styledSvg';
 import { ColoredText, RegularDescription, Title } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { ImportantMark } from '../shared/svg/ImportantMark';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const Wrapper = styled.div`
   padding-top: 17.7083vh;
@@ -88,22 +89,22 @@ export const Final = () => {
         const timeOutId = setTimeout(() => {
             setNotification({text: 'Тебе поставили супер-лайк!'});
         }, 2500);
-        const timeOutPulseNotification = setTimeout(() => {
-            setPulseNotification(true);
-        }, 3300);
 
         return () => {
             setPulseNotification(false);
             clearTimeout(timeOutId);
-            clearTimeout(timeOutPulseNotification);
         };
     }, []);
+
+    const  onNotifClick = () => {
+        reachMetrikaGoal('like');
+        next();
+    }
     return (
         <Wrapper>
             {notification.text && <Notification
-                animated={pulseNotification}
                 text={notification.text}
-                onClick={next}
+                onClick={onNotifClick}
             />}
             <MatchWrapper>
                 <MatchTextWrapper>

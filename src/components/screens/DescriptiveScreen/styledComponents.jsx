@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { Description, SmallLightText, Title } from '../../shared/styledTexts';
+import { BoldText, Description, SmallLightText, Title } from '../../shared/styledTexts';
 import { SwipeCard } from '../../shared/SwipeCard';
 import { SwipeIcon } from '../../shared/svg/SwipeIcon';
 import { SwipeBtns } from '../../shared/SwipeBtns';
@@ -56,14 +56,15 @@ export const HighlightedText = styled.span`
   color: ${({color}) => color};
 `;
 
-export const SmallText = styled(SmallLightText)`
-  position: absolute;
-  bottom: 2.4vh;
-  left: 50%;
-  font-weight: 700;
-  transform: translateX(-50%);
+export const SmallText = styled(Description)`
+  text-align: center;
+  margin-top: 5vh;
 `;
 
 export const SwipeBtnsStyled = styled(SwipeBtns)`
     bottom: 7.2vh;
+`;
+
+export const CardWrapper = styled.div`
+  height: 30vh;
 `;
