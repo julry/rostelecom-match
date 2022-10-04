@@ -5,7 +5,6 @@ import { SwipeIcon } from '../../shared/svg/SwipeIcon';
 import { SwipeBtns } from '../../shared/SwipeBtns';
 
 export const Wrapper = styled.div`
-  position: relative;
   height: 100%;
   width: 100%;
 `;
