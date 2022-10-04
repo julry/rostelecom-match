@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { getStyledSvg } from './styledSvg';
 import { Like } from './svg/Like';
 import { colors } from '../../constants/colors';
+import { ClickIcon } from './svg/ClickIcon';
 
 const appear = keyframes`
   from {
@@ -12,6 +13,7 @@ const appear = keyframes`
     height: 9.8645vh;
   }
 `;
+
 const scaleGrow = keyframes`
   from {
     scale: 0
@@ -23,7 +25,7 @@ const scaleGrow = keyframes`
 
 const pulse = keyframes`
   0% {
-    transform: scale(0.95);
+    transform: scale(0.85);
   }
 
   70% {
@@ -31,9 +33,41 @@ const pulse = keyframes`
   }
 
   100% {
-    transform: scale(0.95);
+    transform: scale(0.85);
   }
 `;
+
+const visibility = keyframes`
+  0% {
+    opacity: 0;
+  }
+  
+  2% {
+    opacity: 0;
+  }
+  
+  12% {
+    opacity: 100%;
+  }
+
+  21% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+`;
+
+const opacityAppear = keyframes`
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 100%
+  }
+`;
+
 
 const Wrapper = styled.div`
   height: 9.8645vh;
@@ -55,18 +89,10 @@ const Container = styled.div`
   border-radius: 5px;
   color: #000000;
   cursor: pointer;
-  overflow: hidden;
   will-change: transform;
   height: 100%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-`;
-
-const StartAnimationWrapper = styled(Container)`
-    animation: ${scaleGrow} .75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-`;
-
-const PulseAnimationWrapper = styled(Container)`
-    animation: ${pulse} 2s infinite;
+  animation: ${scaleGrow} .75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 `;
 
 const Content = styled.div`
@@ -93,21 +119,38 @@ const LikeIconWrapper = styled.div`
   min-height: 20px;
   margin-right: 6.6666vw;
 `;
+
 const LikeIcon = getStyledSvg(Like);
 
+const ClickIconStyled = styled(ClickIcon)`
+  position: absolute;
+  right: 0;
+  top: 5.8vh;
+  width: 11.4667vw;
+  height: 9.7451vh;
+  min-width: 6.4468vh;
+  opacity: 0;
+  animation: ${opacityAppear} 1s 1s ease-in-out forwards, ${pulse} 1.5s 2s infinite;
+  
+  & #clickStrips {
+    opacity: 0;
+    animation: ${visibility} 1.5s 2s infinite;
+  }
+`;
+
 export const Notification = (props) => {
-    const {text, onClick, animated} = props;
-    const ContainerContent = animated ? PulseAnimationWrapper : StartAnimationWrapper;
+    const {text, onClick} = props;
     return (
         <Wrapper onClick={onClick}>
-            <ContainerContent>
+            <Container>
                 <Body>
                     <LikeIconWrapper>
                         <LikeIcon/>
                     </LikeIconWrapper>
                     <Content>{text}</Content>
                 </Body>
-            </ContainerContent>
+                <ClickIconStyled />
+            </Container>
         </Wrapper>
     );
 };

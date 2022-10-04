@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { colors } from '../../../constants/colors';
 import { AddictiveText, LightText, RegularText, SmallLightText, Title } from '../../shared/styledTexts';
-import { LoadingIcon } from '../../shared/svg/LoadingIcon';
 import { Button } from '../../shared/Button';
 
 export const StyledCard = styled.div`
@@ -171,41 +170,13 @@ export const InputWrapper = styled.div`
   background: #F4F4F5;
 `;
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const LoadingStyled = styled(LoadingIcon)`
-  min-width: 20px;
-  min-height: 20px;
-  width: 8.7037vw;
-  max-width: 60px;
-  height: 8.7037vw;
-  max-height: 60px;
-  transition: all 0.5s ease-in;
-  animation: ${rotate} 2.5s infinite linear;
-`;
-
 export const LoadingWrapper = styled.div`
-  display: flex;
   align-items: center;
-  margin: 0 auto;
-  width: calc(8.7037vw + 210px);
+  width: 100%;
 `;
 
 export const LoadingText = styled(AddictiveText)`
-  max-width: 200px;
-  margin-left: 10px;
-
-  @media screen and (min-width: 1000px) {
-    max-width: 400px;
-    margin-left: 20px;
-  }
+  text-align: center;
 `;
 
 const sending = keyframes`

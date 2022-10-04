@@ -6,6 +6,7 @@ import { CARD_TYPES } from '../../constants/cards.config';
 import { getCardById } from '../../utils/getCardById';
 import { SwipeBtns } from '../shared/SwipeBtns';
 import { BackgroundStyled } from '../shared/BackgroundStyled';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const CardContainer = styled.div`
   display: flex;
@@ -47,10 +48,11 @@ export const QuestionScreen = () => {
         currentIndexRef.current = val;
     };
 
-    const onSwipe = (side, id) => {
+    const onSwipe = (side, id, index) => {
         if (!['right', 'left'].includes(side)) return;
         updateAnswer(id, {isAgreed: side === 'right'});
         setCurrentCardId(id);
+        reachMetrikaGoal('q'+ (cards.length - currentIndex));
         updateCurrentIndex(index => index > 0 ? index - 1 : 0);
     };
 

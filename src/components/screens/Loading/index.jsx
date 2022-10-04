@@ -6,7 +6,7 @@ import {
     CardWrapper, DescriptionStyled,
     Form,
     Input, InputCheckboxStyled, InputWrapper, Label,
-    LabelStyled, LoadingStyled, LoadingText, LoadingWrapper,
+    LabelStyled, LoadingText, LoadingWrapper,
     PersonalDataLink, RadioIconStyled, SendBtn, SkipBtn,
     StyledCard,
     StyledTitle, TextStyled, TextWrapperStyled,
@@ -18,6 +18,7 @@ import { Modal } from '../../shared/Modal';
 import { DoneMark } from '../../shared/svg/DoneMark';
 import { BackgroundStyled } from '../../shared/BackgroundStyled';
 import { ErrorMark } from '../../shared/svg/ErrorMark';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
 export const Loading = () => {
     const {next} = useProgress();
@@ -56,10 +57,14 @@ export const Loading = () => {
     const onSubmit = () => {
         if (phone?.length && agreement) {
             setLoading(true);
+            reachMetrikaGoal('phone');
             handleSubmit(phone).then(() => setLoading(false));
         }
     }
-    const onSkip = () => next();
+    const onSkip = () => {
+        reachMetrikaGoal('nophone');
+        next();
+    }
 
     useEffect(() => {
         if (value.length > 3 && value.length < phone?.length) {
@@ -116,8 +121,7 @@ export const Loading = () => {
                 </StyledCard>
             </CardWrapper>
             <LoadingWrapper>
-                <LoadingStyled />
-                <LoadingText>Руководители пока смотрят, с кем у тебя произошёл тотал мэтч</LoadingText>
+                <LoadingText>Руководители пока смотрят, с кем{'\n'}у тебя произошёл тотал мэтч</LoadingText>
             </LoadingWrapper>
             <BtnsBlock>
                 <SendBtn
@@ -125,7 +129,7 @@ export const Loading = () => {
                     animation={loading}
                     onClick={onSubmit}
                 >
-                    Сохранить номер
+                    Оставить номер
                 </SendBtn>
                 <SkipBtn onClick={onSkip}>Не хочу оставлять</SkipBtn>
             </BtnsBlock>

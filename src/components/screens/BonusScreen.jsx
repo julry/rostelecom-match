@@ -12,6 +12,7 @@ import {
     Title
 } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const Wrapper = styled.div`
   padding: 14.2083vh 9.2592vw 20px 9.2592vw;
@@ -77,6 +78,7 @@ export const BonusScreen = () => {
     const [copyReadyModal, setCopyReadyModal] = useState(false);
 
     const onCopy = () => {
+        reachMetrikaGoal('share');
         const text = window.location.href;
         if (window.clipboardData && window.clipboardData.setData) {
             return window.clipboardData.setData('Text', text);
