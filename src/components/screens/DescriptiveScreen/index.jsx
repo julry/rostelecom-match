@@ -9,7 +9,7 @@ import {
     StyledCard,
     StyledTitle,
     SwipeBtnsStyled, SwipeIconStyled,
-    Wrapper, CardWrapper
+    Wrapper, CardWrapper, ComponentCardWrapper
 } from './styledComponents';
 import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
@@ -34,7 +34,7 @@ export const DescriptiveScreen = () => {
                         onSwipe={onSwipe}
                         cardRef={cardRef}
                         prohibitDir={'left'}
-                        Component={() => <div>
+                        Component={() => <ComponentCardWrapper>
                             <Description>
                                 Свайпай
                                 <HighlightedText color={'#60B642'}> вправо</HighlightedText>,
@@ -43,14 +43,13 @@ export const DescriptiveScreen = () => {
                             <Description>
                                 Если нет – свайпай <HighlightedText color={'red'}>влево</HighlightedText>
                             </Description>
-                        </div>}
+                            <SwipeIconStyled />
+                        </ComponentCardWrapper>}
                     />
                 </CardWrapper>
                 <SmallText>Всё ясно –> свайпни вправо</SmallText>
             </Content>
-            <SwipeBtnsStyled canSwipe={!!cardRef} cardRef={cardRef} prohibitDir={'left'}>
-                <SwipeIconStyled />
-            </SwipeBtnsStyled>
+            <SwipeBtnsStyled canSwipe={!!cardRef} cardRef={cardRef} prohibitDir={'left'} />
         </Wrapper>
     )
 };

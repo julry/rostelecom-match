@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Background } from './svg/Background';
 
 const BackgroundWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
