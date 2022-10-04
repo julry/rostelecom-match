@@ -32,6 +32,7 @@ export const QuestionScreen = () => {
     const {cards = [], updateAnswer, updateCards, next} = useProgress();
     const [currentCardId, setCurrentCardId] = useState('');
     const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
+    const [swipedIndex, setSwipedIndex] = useState(cards.length);
     const currentIndexRef = useRef(currentIndex);
     const canSwipe = currentIndex >= 0
 
@@ -45,14 +46,14 @@ export const QuestionScreen = () => {
 
     const updateCurrentIndex = (val) => {
         setCurrentIndex(val);
+        setSwipedIndex(val);
         currentIndexRef.current = val;
     };
 
-    const onSwipe = (side, id) => {
+    const onSwipe = (side, id, index) => {
         if (!['right', 'left'].includes(side)) return;
         updateAnswer(id, {isAgreed: side === 'right'});
         setCurrentCardId(id);
-        reachMetrikaGoal('q'+ (cards.length - currentIndex));
         updateCurrentIndex(index => index > 0 ? index - 1 : 0);
     };
 
@@ -62,6 +63,11 @@ export const QuestionScreen = () => {
         }
         if (+currentCardId === cards.length) next();
     }, [currentCardId]);
+
+    useEffect(() => {
+        if (swipedIndex === cards.length) return;
+        reachMetrikaGoal('q'+ (cards.length - swipedIndex));
+    }, [swipedIndex]);
 
     return (
         <Wrapper style={{width: '100%'}}>
