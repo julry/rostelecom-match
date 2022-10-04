@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { BoldText, Description, SmallLightText, Title } from '../../shared/styledTexts';
+import { Description, Title } from '../../shared/styledTexts';
 import { SwipeCard } from '../../shared/SwipeCard';
 import { SwipeIcon } from '../../shared/svg/SwipeIcon';
 import { SwipeBtns } from '../../shared/SwipeBtns';
@@ -11,7 +11,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 20.6562vh 9.2592vw;
+  padding: 18.6562vh 9.2592vw;
+  width: 100%;
+  height: 100%;
   
   ${Description} + ${Description} {
     margin-top: 3.2vh;
@@ -19,7 +21,7 @@ export const Content = styled.div`
 `;
 
 export const StyledCard = styled(SwipeCard)`
-  height: 30vh;
+  height: 30%;
   padding: 3.2vh;
 `;
 
@@ -62,9 +64,10 @@ export const SmallText = styled(Description)`
 `;
 
 export const SwipeBtnsStyled = styled(SwipeBtns)`
-    bottom: 7.2vh;
+  bottom: 7.2%;
+  max-width: 100vw;
 `;
 
 export const CardWrapper = styled.div`
-  height: 30vh;
+  height: calc(30% + 6.5vh);
 `;

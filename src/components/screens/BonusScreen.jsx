@@ -88,6 +88,7 @@ const ReturnIcon = styled(SimpleLeftArrow)`
   width: 16px;
   height: 8px;
   margin-right: 1vw;
+  
   @media screen and (min-width: 1000px) {
     width: 24px;
     height: 12px;
@@ -100,7 +101,7 @@ const ReturnText = styled(AddictiveText)`
 
 export const BonusScreen = () => {
     const bonuses = useBonusesResult();
-    const {setPrev} = useProgress();
+    const {setPrev, updateProgress} = useProgress();
     const [copyReadyModal, setCopyReadyModal] = useState(false);
 
     const onCopy = () => {
@@ -143,9 +144,15 @@ export const BonusScreen = () => {
         setCopyReadyModal(true);
         setTimeout(() => setCopyReadyModal(false), 3500);
     };
+
+    const onReturnBtnClick = () => {
+        updateProgress('backToMatch', true);
+        setPrev();
+    };
+
     return (
         <Wrapper>
-            <ReturnBtn onClick={setPrev}>
+            <ReturnBtn onClick={onReturnBtnClick}>
                 <ReturnIcon/>
                 <ReturnText>Вернуться к мэтчу с командой</ReturnText>
             </ReturnBtn>

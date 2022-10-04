@@ -5,14 +5,15 @@ import { Notification } from '../shared/Notification';
 import { useProgress } from '../../hooks/useProgress';
 import { ItsAMatch } from '../shared/svg/ItsAMatch';
 import { getStyledSvg } from '../shared/styledSvg';
-import { ColoredText, RegularDescription, Title } from '../shared/styledTexts';
+import { AddictiveText, ColoredText, RegularDescription, Title } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { ImportantMark } from '../shared/svg/ImportantMark';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
+import { SimpleLeftArrow } from '../shared/svg/SimpleLeftArrow';
 
 const Wrapper = styled.div`
   padding-top: 17.7083vh;
-  
+
   @media screen and (max-height: 550px) {
     padding-top: 15vh;
   }
@@ -79,11 +80,34 @@ const ImportantSignWrapper = styled.div`
 
 const ImportantSign = getStyledSvg(ImportantMark);
 
+const ReturnBtn = styled.div`
+  position: absolute;
+  right: 9.0667vw;
+  top: 7.7961vh;
+  display: flex;
+  align-items: center;
+`;
+
+const ReturnIcon = styled(SimpleLeftArrow)`
+  width: 16px;
+  height: 8px;
+  margin-left: 1vw;
+  transform: rotate(180deg);
+  
+  @media screen and (min-width: 1000px) {
+    width: 24px;
+    height: 12px;
+  }
+`;
+
+const ReturnText = styled(AddictiveText)`
+  text-decoration: underline;
+`;
+
 export const Final = () => {
     const result = useResult();
-    const {next} = useProgress();
+    const {next, progress} = useProgress();
     const [notification, setNotification] = useState({});
-    const [pulseNotification, setPulseNotification] = useState(false);
 
     useEffect(() => {
         const timeOutId = setTimeout(() => {
@@ -91,21 +115,29 @@ export const Final = () => {
         }, 2500);
 
         return () => {
-            setPulseNotification(false);
             clearTimeout(timeOutId);
         };
     }, []);
 
-    const  onNotifClick = () => {
+    const onNotifClick = () => {
         reachMetrikaGoal('like');
         next();
-    }
+    };
+
     return (
         <Wrapper>
-            {notification.text && <Notification
-                text={notification.text}
-                onClick={onNotifClick}
-            />}
+            {progress.backToMatch ? (
+                <ReturnBtn onClick={next}>
+                    <ReturnText>Вернуться к супер-лайку</ReturnText>
+                    <ReturnIcon/>
+                </ReturnBtn>
+                ) : notification.text && (
+                    <Notification
+                        text={notification.text}
+                        onClick={onNotifClick}
+                    />
+                )
+            }
             <MatchWrapper>
                 <MatchTextWrapper>
                     <MatchText/>
