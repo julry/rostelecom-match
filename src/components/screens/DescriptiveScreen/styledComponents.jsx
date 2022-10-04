@@ -22,6 +22,7 @@ export const Content = styled.div`
 export const StyledCard = styled(SwipeCard)`
   height: 30%;
   padding: 3.2vh;
+  overflow: visible;
 `;
 
 export const StyledTitle = styled(Title)`
@@ -49,6 +50,10 @@ export const leftRight = keyframes`
 export const SwipeIconStyled = styled(SwipeIcon)`
   width: 16.666vw;
   height: 10.2vh;
+  position: absolute;
+  bottom: -10.4vh;
+  left: calc(50% - 8.333vw);
+  z-index: 100;
   will-change: transform;
   animation: ${leftRight} 2s ease-in-out infinite;
 `;
@@ -59,7 +64,7 @@ export const HighlightedText = styled.span`
 
 export const SmallText = styled(Description)`
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 11vh;
 `;
 
 export const SwipeBtnsStyled = styled(SwipeBtns)`
@@ -68,9 +73,13 @@ export const SwipeBtnsStyled = styled(SwipeBtns)`
 `;
 
 export const CardWrapper = styled.div`
-  height: calc(30% + 6.5vh);
-  
+  height: calc(30% + 9.7vh);
+  position: relative;
   @media screen and (max-width: 330px){
     height: calc(30% + 8.5vh)
   }
 `;
+
+export const ComponentCardWrapper = styled.div`
+  position: relative;
+`
