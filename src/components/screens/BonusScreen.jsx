@@ -6,13 +6,15 @@ import { Button } from '../shared/Button';
 import styled from 'styled-components';
 import {
     AddictiveText,
-    ColoredText,
+    ColoredText, MediumText,
     RegularDescription,
     SmallLightText,
     Title
 } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
+import { SimpleLeftArrow } from '../shared/svg/SimpleLeftArrow';
+import { useProgress } from '../../hooks/useProgress';
 
 const Wrapper = styled.div`
   padding: 14.2083vh 9.2592vw 20px 9.2592vw;
@@ -20,7 +22,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 800px;
-  
+
   @media screen and (max-width: 330px) {
     padding-top: 12.4251vh;
   }
@@ -71,10 +73,34 @@ const SmallText = styled(SmallLightText)`
 `;
 
 const Description = styled(RegularDescription)`
-    margin-bottom: 1vh;
-`
+  margin-bottom: 1vh;
+`;
+
+const ReturnBtn = styled.div`
+  position: absolute;
+  right: 9.0667vw;
+  top: 7.7961vh;
+  display: flex;
+  align-items: center;
+`;
+
+const ReturnIcon = styled(SimpleLeftArrow)`
+  width: 16px;
+  height: 8px;
+  margin-right: 1vw;
+  @media screen and (min-width: 1000px) {
+    width: 24px;
+    height: 12px;
+  }
+`;
+
+const ReturnText = styled(AddictiveText)`
+  text-decoration: underline;
+`;
+
 export const BonusScreen = () => {
     const bonuses = useBonusesResult();
+    const {setPrev} = useProgress();
     const [copyReadyModal, setCopyReadyModal] = useState(false);
 
     const onCopy = () => {
@@ -117,42 +143,47 @@ export const BonusScreen = () => {
         setCopyReadyModal(true);
         setTimeout(() => setCopyReadyModal(false), 3500);
     };
-    return (<Wrapper>
-        <Title>
-            Вау… тут явно есть все шансы на совместное будущее!
-        </Title>
-        <MatchWrapper>
+    return (
+        <Wrapper>
+            <ReturnBtn onClick={setPrev}>
+                <ReturnIcon/>
+                <ReturnText>Вернуться к мэтчу</ReturnText>
+            </ReturnBtn>
             <Title>
-                <ColoredTitle color={colors.purple}>
-                    Ты и Ростелеком -
-                </ColoredTitle>
+                Вау… тут явно есть все шансы на совместное будущее!
             </Title>
-            <Title>
-                <ColoredTitle color={colors.orange}>
-                    it’s a perfect match!
-                </ColoredTitle>
-            </Title>
-        </MatchWrapper>
-        <Description>
-            Помимо мэтча с командой тебя ждут прекрасные отношения и с самой компанией :)
-        </Description>
-        <AddictiveText>
-            Вместе вы сможете:
-        </AddictiveText>
-        <ul>
-            {bonuses.map(bonus => (
-                <LiStyled key={bonus}>
-                    <LiDoneMark/>
-                    <RegularDescription>{bonus}</RegularDescription>
-                </LiStyled>
-            ))}
-        </ul>
-        <ButtonBlock>
-            <StyledButton onClick={onCopyButtonClick}>
-                Отправь ссылку другу
-            </StyledButton>
-            <SmallText>Вдруг вас сведет судьба в Ростелекоме</SmallText>
-        </ButtonBlock>
-        {copyReadyModal && <Modal text={'Ссылка\nскопирована'} icon={DoneMark}/>}
-    </Wrapper>);
+            <MatchWrapper>
+                <Title>
+                    <ColoredTitle color={colors.purple}>
+                        Ты и Ростелеком -
+                    </ColoredTitle>
+                </Title>
+                <Title>
+                    <ColoredTitle color={colors.orange}>
+                        it’s a perfect match!
+                    </ColoredTitle>
+                </Title>
+            </MatchWrapper>
+            <Description>
+                Помимо мэтча с командой тебя ждут прекрасные отношения и с самой компанией :)
+            </Description>
+            <AddictiveText>
+                Вместе вы сможете:
+            </AddictiveText>
+            <ul>
+                {bonuses.map(bonus => (
+                    <LiStyled key={bonus}>
+                        <LiDoneMark/>
+                        <RegularDescription>{bonus}</RegularDescription>
+                    </LiStyled>
+                ))}
+            </ul>
+            <ButtonBlock>
+                <StyledButton onClick={onCopyButtonClick}>
+                    Отправь ссылку другу
+                </StyledButton>
+                <SmallText>Вдруг вас сведет судьба в Ростелекоме</SmallText>
+            </ButtonBlock>
+            {copyReadyModal && <Modal text={'Ссылка\nскопирована'} icon={DoneMark}/>}
+        </Wrapper>);
 };
