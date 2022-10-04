@@ -94,6 +94,8 @@ export const SwipeCard = (props) => {
             ref={cardRef}
             onSwipe={(side) => onSwipe(side, id)}
             preventSwipe={preventSwipe}
+            swipeRequirementType={'position'}
+            swipeThreshold={10}
         >
             <Wrapper ref={refW} className={props.className}>
                 <StyledContent>

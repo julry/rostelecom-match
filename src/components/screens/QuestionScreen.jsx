@@ -40,7 +40,7 @@ export const QuestionScreen = () => {
             Array(cards.length)
                 .fill(0)
                 .map(() => React.createRef()),
-        []
+        [cards.length]
     );
 
     const updateCurrentIndex = (val) => {
@@ -48,7 +48,7 @@ export const QuestionScreen = () => {
         currentIndexRef.current = val;
     };
 
-    const onSwipe = (side, id, index) => {
+    const onSwipe = (side, id) => {
         if (!['right', 'left'].includes(side)) return;
         updateAnswer(id, {isAgreed: side === 'right'});
         setCurrentCardId(id);
