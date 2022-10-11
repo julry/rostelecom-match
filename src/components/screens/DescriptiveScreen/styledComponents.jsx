@@ -15,13 +15,13 @@ export const Content = styled.div`
   height: 100%;
   
   ${Description} + ${Description} {
-    margin-top: 3.2vh;
+    margin-top: 3vh;
   }
 `;
 
 export const StyledCard = styled(SwipeCard)`
   height: 30%;
-  padding: 3.2vh;
+  padding: 3vh 3vh 5.3vh;
   overflow: visible;
 `;
 
@@ -51,7 +51,7 @@ export const SwipeIconStyled = styled(SwipeIcon)`
   width: 16.666vw;
   height: 10.2vh;
   position: absolute;
-  bottom: -10.4vh;
+  bottom: -12.5vh;
   left: calc(50% - 8.333vw);
   z-index: 100;
   will-change: transform;

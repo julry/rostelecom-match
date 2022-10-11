@@ -7,14 +7,14 @@ export const StyledCard = styled.div`
   position: relative;
   height: 55.9375%;
   padding: 7%;
-  min-height: 265px;
+  min-height: 275px;
   width: 81.4814vw;
   max-width: 880px;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
   @media screen and (max-height: 550px) {
-    min-height: 225px;
+    min-height: 235px;
   }
 `;
 
@@ -141,10 +141,10 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   height: 55.9375%;
-  min-height: 265px;
+  min-height: 275px;
 
   @media screen and (max-height: 550px) {
-    min-height: 225px;
+    min-height: 235px;
   }
 `;
 
