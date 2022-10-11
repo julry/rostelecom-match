@@ -166,7 +166,7 @@ export const BonusScreen = () => {
             </ul>
             <ButtonBlock>
                 <StyledButton onClick={onCopyButtonClick}>
-                    Отправь ссылку другу
+                    Отправить ссылку другу
                 </StyledButton>
                 <StyledButtonPrize
                     onClick={progress?.phoneSaved ? () => {} : next}
