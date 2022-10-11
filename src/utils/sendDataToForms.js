@@ -10,9 +10,10 @@ export const sendDataToForms = ({phone}) => {
         body: formData
     };
     const myRequest = new Request(GOOGLE_FORM_ACTION_URL, myInit);
-    return fetch(myRequest).then(response => {
-        return response
-    }).catch(e => {
-        return;
-    })
+    return true;
+    // return fetch(myRequest).then(response => {
+    //     return response
+    // }).catch(e => {
+    //     return;
+    // })
 };

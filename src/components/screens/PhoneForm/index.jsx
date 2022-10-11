@@ -19,9 +19,10 @@ import { DoneMark } from '../../shared/svg/DoneMark';
 import { BackgroundStyled } from '../../shared/BackgroundStyled';
 import { ErrorMark } from '../../shared/svg/ErrorMark';
 import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
+import { ReturnBtn } from '../../shared/ReturnBtn';
 
-export const Loading = () => {
-    const {next} = useProgress();
+export const PhoneForm = () => {
+    const {next, setPrev, updateProgress} = useProgress();
     const [phone, setPhone] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [errorText, setErrorText] = useState('');
@@ -36,8 +37,9 @@ export const Loading = () => {
         const result = await sendDataToForms({phone: correctPhone});
         if (result) {
             setTimeout(() => {
-                next();
+                setPrev();
             }, 3000);
+            updateProgress('phoneSaved', true);
             setSendingMessage({text: 'Телефон\nсохранён', success: true, icon: DoneMark});
         }
         else {
@@ -63,7 +65,7 @@ export const Loading = () => {
     }
     const onSkip = () => {
         reachMetrikaGoal('nophone');
-        next();
+        setPrev();
     }
 
     useEffect(() => {
@@ -77,14 +79,18 @@ export const Loading = () => {
     return (
         <Wrapper>
             <BackgroundStyled/>
+            <ReturnBtn onClick={setPrev} direction={'prev'}>
+                Вернуться к супер-лайку
+            </ReturnBtn>
             <StyledTitle>
                 Оставь свой номер телефона, чтобы{'\n'}участвовать в розыгрыше призов!
             </StyledTitle>
             <CardWrapper>
                 <StyledCard>
                     <DescriptionStyled>
-                        Обещаем, что будем использовать его только для оповещения о выигрыше.{'\n'}
-                        Если не хочешь мерч от Ростелекома – можно пропустить этот этап
+                        <b>Оставь свой номер телефона, чтобы{'\n'}побороться за мерч!</b>{'\n\n'}
+                        Обещаем, что будем использовать его только для оповещения о выигрыше. Результаты определим рандомайзером в декабре 2022.{'\n'}
+                        Если не хочешь мерч от Ростелекома – можно пропустить этот этап!
                     </DescriptionStyled>
                     <Form>
                         <InputWrapper>
@@ -120,9 +126,6 @@ export const Loading = () => {
                     </Form>
                 </StyledCard>
             </CardWrapper>
-            <LoadingWrapper>
-                <LoadingText>Руководители пока смотрят, с кем{'\n'}у тебя произошёл тотал мэтч</LoadingText>
-            </LoadingWrapper>
             <BtnsBlock>
                 <SendBtn
                     disabled={!phone?.length || !agreement}

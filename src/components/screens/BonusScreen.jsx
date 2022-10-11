@@ -15,6 +15,7 @@ import { colors } from '../../constants/colors';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 import { SimpleLeftArrow } from '../shared/svg/SimpleLeftArrow';
 import { useProgress } from '../../hooks/useProgress';
+import { ReturnBtn } from '../shared/ReturnBtn';
 
 const Wrapper = styled.div`
   padding: 14.2083vh 9.2592vw 20px 9.2592vw;
@@ -67,41 +68,20 @@ const StyledButton = styled(Button)`
   margin-bottom: 5px;
 `;
 
-const SmallText = styled(SmallLightText)`
-  text-align: center;
-  font-size: 9px;
+const StyledButtonPrize = styled(StyledButton)`
+  background: ${({disabled}) => disabled ? 'white' : colors.purple};
+  border: ${({disabled}) => disabled ? '1px solid #B5B7C0' : 'none'};
+  color: ${({disabled}) => disabled ? '#B5B7C0' : 'white'};
 `;
+
 
 const Description = styled(RegularDescription)`
   margin-bottom: 1vh;
 `;
 
-const ReturnBtn = styled.div`
-  position: absolute;
-  right: 9.0667vw;
-  top: 7.7961vh;
-  display: flex;
-  align-items: center;
-`;
-
-const ReturnIcon = styled(SimpleLeftArrow)`
-  width: 16px;
-  height: 8px;
-  margin-right: 1vw;
-  
-  @media screen and (min-width: 1000px) {
-    width: 24px;
-    height: 12px;
-  }
-`;
-
-const ReturnText = styled(AddictiveText)`
-  text-decoration: underline;
-`;
-
 export const BonusScreen = () => {
     const bonuses = useBonusesResult();
-    const {setPrev, updateProgress} = useProgress();
+    const {setPrev, updateProgress, next, progress} = useProgress();
     const [copyReadyModal, setCopyReadyModal] = useState(false);
 
     const onCopy = () => {
@@ -152,9 +132,8 @@ export const BonusScreen = () => {
 
     return (
         <Wrapper>
-            <ReturnBtn onClick={onReturnBtnClick}>
-                <ReturnIcon/>
-                <ReturnText>Вернуться к мэтчу с командой</ReturnText>
+            <ReturnBtn onClick={onReturnBtnClick} direction={'prev'}>
+                Вернуться к мэтчу с командой
             </ReturnBtn>
             <Title>
                 Вау… тут явно есть все шансы на совместное будущее!
@@ -189,7 +168,12 @@ export const BonusScreen = () => {
                 <StyledButton onClick={onCopyButtonClick}>
                     Отправь ссылку другу
                 </StyledButton>
-                <SmallText>Вдруг вас сведет судьба в Ростелекоме</SmallText>
+                <StyledButtonPrize
+                    onClick={progress?.phoneSaved ? () => {} : next}
+                    disabled={progress?.phoneSaved}
+                >
+                    {progress.phoneSaved ? 'Ты уже участвуешь в борьбе за мерч!' : 'Получить мерч от Ростелекома'}
+                </StyledButtonPrize>
             </ButtonBlock>
             {copyReadyModal && <Modal text={'Ссылка\nскопирована'} icon={DoneMark}/>}
         </Wrapper>);

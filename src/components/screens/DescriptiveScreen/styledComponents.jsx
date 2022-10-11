@@ -73,10 +73,10 @@ export const SwipeBtnsStyled = styled(SwipeBtns)`
 `;
 
 export const CardWrapper = styled.div`
-  height: calc(30% + 9.7vh);
+  height: calc(30% + 9.7vh + 16px);
   position: relative;
   @media screen and (max-width: 330px){
-    height: calc(30% + 8.5vh)
+    height: calc(30% + 8.5vh + 14px)
   }
 `;
 
