@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.0b99d99d.css",
-    "main.js": "./static/js/main.a85fa8ed.js",
+    "main.js": "./static/js/main.3ef7104b.js",
     "static/media/card4.png": "./static/media/card4.b44a48fbd2cd5dbdc979.png",
     "static/media/card3.png": "./static/media/card3.048eb69d7e7812099e3c.png",
     "static/media/card7.png": "./static/media/card7.c5ce3ca68550dd42c803.png",
@@ -13,21 +13,21 @@
     "static/media/card2.png": "./static/media/card2.ae4bbc3bcd2bf0c84551.png",
     "static/media/card10.png": "./static/media/card10.72f819bc0e937596ff1d.png",
     "static/media/card11.png": "./static/media/card11.542d080d22e2930905cb.png",
+    "static/media/phone.png": "./static/media/phone.ad3323c6b11b5490660f.png",
     "static/media/RostelecomBasis-Bold.otf": "./static/media/RostelecomBasis-Bold.d019413c789f015fb5fc.otf",
     "static/media/RostelecomBasis-Medium.otf": "./static/media/RostelecomBasis-Medium.5e78446fd5e17870de26.otf",
     "static/media/RostelecomBasis-Regular.otf": "./static/media/RostelecomBasis-Regular.8283eaf35976e84bf84b.otf",
     "static/media/RostelecomBasis-Light.otf": "./static/media/RostelecomBasis-Light.87527535ae56c1a745b3.otf",
     "static/media/LabGrotesque-Light.ttf": "./static/media/LabGrotesque-Light.df3fbcdca778d26bdc58.ttf",
-    "static/media/phone.png": "./static/media/phone.def6465ae24167ac7222.png",
     "static/media/startMan.png": "./static/media/startMan.d18097d20c1eaa08b2f9.png",
     "static/media/LabGrotesque-Light.woff": "./static/media/LabGrotesque-Light.d032250e8bff240c6e9d.woff",
     "static/media/LabGrotesque-Light.woff2": "./static/media/LabGrotesque-Light.098291affdb12aefd649.woff2",
     "index.html": "./index.html",
     "main.0b99d99d.css.map": "./static/css/main.0b99d99d.css.map",
-    "main.a85fa8ed.js.map": "./static/js/main.a85fa8ed.js.map"
+    "main.3ef7104b.js.map": "./static/js/main.3ef7104b.js.map"
   },
   "entrypoints": [
     "static/css/main.0b99d99d.css",
-    "static/js/main.a85fa8ed.js"
+    "static/js/main.3ef7104b.js"
   ]
 }
