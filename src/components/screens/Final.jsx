@@ -10,6 +10,7 @@ import { colors } from '../../constants/colors';
 import { ImportantMark } from '../shared/svg/ImportantMark';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 import { SimpleLeftArrow } from '../shared/svg/SimpleLeftArrow';
+import { ReturnBtn } from '../shared/ReturnBtn';
 
 const Wrapper = styled.div`
   padding-top: 17.7083vh;
@@ -80,30 +81,6 @@ const ImportantSignWrapper = styled.div`
 
 const ImportantSign = getStyledSvg(ImportantMark);
 
-const ReturnBtn = styled.div`
-  position: absolute;
-  right: 9.0667vw;
-  top: 7.7961vh;
-  display: flex;
-  align-items: center;
-`;
-
-const ReturnIcon = styled(SimpleLeftArrow)`
-  width: 16px;
-  height: 8px;
-  margin-left: 1vw;
-  transform: rotate(180deg);
-  
-  @media screen and (min-width: 1000px) {
-    width: 24px;
-    height: 12px;
-  }
-`;
-
-const ReturnText = styled(AddictiveText)`
-  text-decoration: underline;
-`;
-
 export const Final = () => {
     const result = useResult();
     const {next, progress} = useProgress();
@@ -127,10 +104,7 @@ export const Final = () => {
     return (
         <Wrapper>
             {progress.backToMatch ? (
-                <ReturnBtn onClick={next}>
-                    <ReturnText>Вернуться к супер-лайку</ReturnText>
-                    <ReturnIcon/>
-                </ReturnBtn>
+                <ReturnBtn onClick={next} direction={'next'}>Вернуться к супер-лайку</ReturnBtn>
                 ) : notification.text && (
                     <Notification
                         text={notification.text}

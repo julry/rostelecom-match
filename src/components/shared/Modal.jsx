@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid ${colors.purple};
-  border-radius: 5px;
+  border-radius: 14px;
   width: 53vw;
   padding: 4.1667vh 10px;
   z-index: 10;

@@ -22,20 +22,10 @@ const getArrowStyled = (Arrow) => styled(Arrow)`
 const ArrowLeftStyled = getArrowStyled(ArrowLeft);
 const ArrowRightStyled = getArrowStyled(ArrowRight);
 
-export const SwipeBtns = (props) => {
-    const {canSwipe, cardRef, prohibitDir} = props;
-    const onClick = async (dir) => {
-        if (prohibitDir === dir) return;
-        if (canSwipe) {
-            await cardRef.current.swipe(dir)
-        }
-    };
-
-    return (
+export const SwipeBtns = (props) => (
         <ButtonsContainer className={props.className}>
-            <ArrowLeftStyled onClick={() => onClick('left')}/>
+            <ArrowLeftStyled/>
             {props.children}
-            <ArrowRightStyled onClick={() => onClick('right')} />
+            <ArrowRightStyled/>
         </ButtonsContainer>
-    );
-};
+);

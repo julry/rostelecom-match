@@ -12,12 +12,15 @@ const FlexWrapper = styled.div`
 const Wrapper = styled(FlexWrapper)`
   position: relative;
   background: white;
+  justify-content: space-between;
   border: 4px solid ${colors.orange};
   border-radius: 30px;
+  min-width: 68.75vw;
 `;
 
 const ContentWrapper = styled.div`
-  padding: 50px;
+  padding: 50px 10px 50px 50px;
+  max-width: 475px;
   white-space: pre-line;
 `;
 
@@ -28,29 +31,31 @@ const Title = styled(BoldText)`
 const Description = styled(MediumText)`
   font-size: 16px;
   margin-top: 15px;
-  max-width: 415px;
 `;
 
 const TextBold = styled(BoldText)`
   font-size: 16px;
-  margin-left: 40px;
 `;
 
 const QrWrapper = styled(FlexWrapper)`
   align-items: center;
   margin-top: 50px;
-  margin-left: -5px;
+  margin-left: -10px;
+  padding-right: 10px;
+  justify-content: space-between;
 `;
 
 const ImageWrapper = styled(FlexWrapper)`
-  width: 28.90625vw;
-  height: 100%;
-  min-width: 51vh;
+  width: 30.8594vw;
+  min-width: 54.3vh;
+  padding-right: 1vw;
+  border-bottom-right-radius: 26px;
+  overflow: hidden;
   justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 const Image = styled.img`
-  height: 100%;
   width: 100%;
   object-fit: contain;
 `;
@@ -89,7 +94,7 @@ export const InfoQr = () => {
                 <Title>Привет!</Title>
                 <Description>
                     До карьеры мечты осталось всего несколько свайпов!{'\n'}
-                    Открывай игру на телефоне, отвечай на вопросы{'\n'}и находи мэтч с идеальной командой Ростелекома.
+                    Открывай игру на телефоне, отвечай на вопросы{'\n'}и находи мэтч с одной из команд Ростелекома.
                     {'\n'}
                 </Description>
                 <Description>

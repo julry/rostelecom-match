@@ -5,16 +5,16 @@ import { Button } from '../../shared/Button';
 
 export const StyledCard = styled.div`
   position: relative;
-  height: 35.9375%;
+  height: 55.9375%;
   padding: 7%;
-  min-height: 240px;
+  min-height: 265px;
   width: 81.4814vw;
   max-width: 880px;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
   @media screen and (max-height: 550px) {
-    min-height: 190px;
+    min-height: 225px;
   }
 `;
 
@@ -140,11 +140,11 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 35.9375%;
-  min-height: 240px;
+  height: 55.9375%;
+  min-height: 265px;
 
   @media screen and (max-height: 550px) {
-    min-height: 190px;
+    min-height: 225px;
   }
 `;
 

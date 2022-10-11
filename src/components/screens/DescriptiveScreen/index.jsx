@@ -28,7 +28,7 @@ export const DescriptiveScreen = () => {
         <Wrapper>
             <BackgroundStyled />
             <Content>
-                <StyledTitle>{'Мини - гайд для тех, кто давно\nне сидел в приложениях\nзнакомств'}</StyledTitle>
+                <StyledTitle>{'Мини-гайд для тех, кто давно\nне сидел в приложениях\nзнакомств'}</StyledTitle>
                 <CardWrapper>
                     <StyledCard
                         onSwipe={onSwipe}
@@ -36,12 +36,12 @@ export const DescriptiveScreen = () => {
                         prohibitDir={'left'}
                         Component={() => <ComponentCardWrapper>
                             <Description>
-                                Свайпай
-                                <HighlightedText color={'#60B642'}> вправо</HighlightedText>,
-                                если содержание карточки тебе близко или соответствует твоим компетенциям.
+                                Свайпай карточку
+                                <HighlightedText color={'#60B642'}> вправо</HighlightedText>,{'\n'}
+                                если её содержание тебе близко или соответствует твоим компетенциям
                             </Description>
                             <Description>
-                                Если нет – свайпай <HighlightedText color={'red'}>влево</HighlightedText>
+                                Если нет – свайпай карточку <HighlightedText color={'red'}>влево</HighlightedText>
                             </Description>
                             <SwipeIconStyled />
                         </ComponentCardWrapper>}

@@ -20,11 +20,11 @@ export const Wrapper = styled.div`
 `;
 
 export const ManWrapper = styled.div`
-  padding-top: 4.2687vh;
+  padding-top: 5.2687vh;
   width: 30vw;
   max-width: 314px;
   min-width: 16.3538vh;
-  height: 22.135vh;
+  height: 25.135vh;
   max-height: 425px;
   margin-left: 3.5407vw;
   position: relative;
@@ -79,13 +79,18 @@ export const ThinkWrapper = styled.div`
 export const ThinkCloudStyled = getStyledSvg(ThinkingCloud);
 
 export const ThinkText = styled(MediumText)`
-  font-size: 9px;
+  font-size: 10px;
   position: absolute;
-  top: 31%;
-  left: 12.8248%;
+  top: 28%;
+  left: 16.8248%;
+  
+  @media screen and (max-width: 320px){
+    font-size: 8px;
+  }
+  
   @media screen and (max-width: 320px) and (min-height: 600px){
     left: 25%;
-    font-size: 8px;
+    top: 24%;
   }
 
   @media screen and (min-width: 1000px) {
@@ -95,16 +100,19 @@ export const ThinkText = styled(MediumText)`
 `;
 
 export const SmallText = styled(LightText)`
-  font-size: 8px;
-  margin-left: 12.8248%;
+  font-size: 10px;
+  margin-left: 16.8248%;
 
   @media screen and (min-width: 1000px) {
     font-size: 10px;
     margin-left: 5.5%;
   }
 
+  @media screen and (max-width: 320px){
+    font-size: 8px;
+  }
+  
   @media screen and (max-width: 320px) and (min-height: 600px){
-    font-size: 7px;
     margin-left: 25%;
   }
 `;
@@ -114,18 +122,26 @@ export const DescriptionWrapper = styled.div`
   background-color: #F4F4F5;
   border-radius: 5px;
   margin: 0 9.2592vw;
-  padding: 4.8229vh 9.2592vw;
+  padding: 4.8229vh 5.3333vw;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (min-width: 1000px) {
     margin: 0;
     padding: 70px;
   }
+  
+  @media screen and (max-width: 320px){
+    padding: 4.8229vh 2vw;
+  }
 `;
 
 export const ImportantWrapper = styled.div`
   display: flex;
-  margin-top: 5.677vh;
+  margin-top: 3.677vh;
+  justify-content: center;
 `
 
 export const ImportantSign = styled(ImportantMark)`
