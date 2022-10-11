@@ -140,7 +140,7 @@ export const DescriptionWrapper = styled.div`
 
 export const ImportantWrapper = styled.div`
   display: flex;
-  margin-top: 3.677vh;
+  margin: 4.677vh 0 1.3952vh;
   justify-content: center;
 `
 
