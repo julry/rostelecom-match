@@ -28,7 +28,7 @@ const MobileViewLandscaped = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 13123;
+    z-index: 10000;
     width: 100%;
     height: 100%;
   }
@@ -53,7 +53,7 @@ const LogoWrapper = styled.div`
   max-height: 52px;
   width: 7.7777%;
   max-width: 40px;
-  z-index: 10000;
+  z-index: 100;
 `;
 
 const InfoScreen = styled.div`
@@ -84,7 +84,7 @@ function App() {
     const [height, setHeight] = useState('100vh');
     const progress = useProgressInit();
     const {screen, updateProgress} = progress;
-    const notResizedScreens = [3];
+    const notResizedScreens = [5];
     const Component = screen?.component || (() => null);
     const wrapperRef = useRef(null);
 
@@ -102,13 +102,12 @@ function App() {
         function handleResize() {
             const viewportHeight = document.documentElement.clientHeight;
             setHeight(viewportHeight + 'px');
+            updateProgress('height', viewportHeight);
         }
 
         handleResize();
-        if (notResizedScreens.includes(screen.id)) {
+        if (notResizedScreens.includes(screen.id)) return;
 
-            return;
-        }
 
         window.addEventListener('resize', handleResize);
 

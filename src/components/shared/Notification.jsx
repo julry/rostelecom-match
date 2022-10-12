@@ -76,7 +76,7 @@ const Wrapper = styled.div`
   will-change: height;
   position: absolute;
   top: 2.6041vh;
-  z-index: 100000000;
+  z-index: 1000;
   left: 50%;
   transform: translateX(-50%);
   animation: ${appear} .75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -102,6 +102,10 @@ const Content = styled.div`
   
   @media screen and (max-width: 330px){
     font-size: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
   }
 `;
 

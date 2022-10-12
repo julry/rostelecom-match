@@ -130,6 +130,11 @@ export const BonusScreen = () => {
         setPrev();
     };
 
+    const onPrizeClick = () => {
+        reachMetrikaGoal('merch');
+        next();
+    }
+
     return (
         <Wrapper>
             <ReturnBtn onClick={onReturnBtnClick} direction={'prev'}>
@@ -169,7 +174,7 @@ export const BonusScreen = () => {
                     Отправить ссылку другу
                 </StyledButton>
                 <StyledButtonPrize
-                    onClick={progress?.phoneSaved ? () => {} : next}
+                    onClick={progress?.phoneSaved ? () => {} : onPrizeClick}
                     disabled={progress?.phoneSaved}
                 >
                     {progress.phoneSaved ? 'Ты уже участвуешь в борьбе за мерч!' : 'Получить мерч от Ростелекома'}

@@ -17,7 +17,7 @@ import {
 import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
 export const StartScreen = () => {
-    const {next} = useProgress();
+    const {next, progress} = useProgress();
 
     const onStart = () => {
         reachMetrikaGoal('start')
@@ -33,7 +33,7 @@ export const StartScreen = () => {
                 <ThinkPathWrapper>
                     <ThinkPath/>
                 </ThinkPathWrapper>
-                <ThinkWrapper>
+                <ThinkWrapper height={progress.height}>
                     <ThinkCloudStyled/>
                     <ThinkText>
                         {'«Эх, было бы с выбором работы\nвсё так же просто, как с приложениями\nдля знакомств :(»'}
@@ -49,7 +49,7 @@ export const StartScreen = () => {
                     <ImportantWrapper>
                         <ImportantSign/>
                         <AddictiveText>
-                            {'Следуй своим истинным желаниям,\nтолько тогда тропа из свайпов\nприведет тебя в нужное место.'}
+                            {'Следуй своим истинным желаниям,\nтолько тогда тропа из свайпов\nприведет тебя в нужное место'}
                         </AddictiveText>
                     </ImportantWrapper>
                     <StartBtn onClick={onStart}>На поиски!</StartBtn>

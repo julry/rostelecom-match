@@ -49,7 +49,7 @@ export const DescriptiveScreen = () => {
                 </CardWrapper>
                 <SmallText>Всё ясно –> свайпни вправо</SmallText>
             </Content>
-            <SwipeBtnsStyled canSwipe={!!cardRef} cardRef={cardRef} prohibitDir={'left'} />
+            <SwipeBtnsStyled/>
         </Wrapper>
     )
 };

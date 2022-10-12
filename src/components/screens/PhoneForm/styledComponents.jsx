@@ -13,8 +13,13 @@ export const StyledCard = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
+  
   @media screen and (max-height: 550px) {
     min-height: 235px;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 325px;
   }
 `;
 
@@ -32,6 +37,10 @@ export const Label = styled(RegularText)`
   font-size: 11px;
   color: ${({isError}) => isError ? 'red' : '#797E8B'};
 
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+  
   @media screen and (min-width: 1000px) {
     font-size: 15px;
   }
@@ -40,6 +49,9 @@ export const Label = styled(RegularText)`
 export const StyledTitle = styled(Title)`
   font-size: 16px;
   margin-left: 9.2592%;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Form = styled.div`
@@ -130,6 +142,11 @@ export const TextStyled = styled(LightText)`
   color: #797E8B;
   font-size: 7px;
 
+
+  @media screen and (min-width: 768px) {
+    font-size: 10px;
+  }
+  
   @media screen and (min-width: 1000px) {
     font-size: 12px;
   }
@@ -146,6 +163,10 @@ export const CardWrapper = styled.div`
   @media screen and (max-height: 550px) {
     min-height: 235px;
   }
+
+  @media screen and (min-width: 768px) {
+    min-height: 325px;
+  }
 `;
 
 export const PersonalDataLink = styled.span`
@@ -159,6 +180,10 @@ export const DescriptionStyled = styled(RegularText)`
     font-size: 9px;
   }
 
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+  
   @media screen and (min-width: 1000px) {
     font-size: 16px;
   }
@@ -199,11 +224,6 @@ export const SendBtn = styled(Button)`
   transition: background-color 0.5s;
   transform-origin: 50% 50%;
   animation: ${sending} ${({animation}) => animation ? '1.5s' : 0} infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
-`;
-
-export const SkipBtn = styled(SmallLightText)`
-  margin-top: 10px;
-  text-decoration: underline;
 `;
 
 export const BtnsBlock = styled.div`
