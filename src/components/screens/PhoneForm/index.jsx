@@ -6,8 +6,8 @@ import {
     CardWrapper, DescriptionStyled,
     Form,
     Input, InputCheckboxStyled, InputWrapper, Label,
-    LabelStyled, LoadingText, LoadingWrapper,
-    PersonalDataLink, RadioIconStyled, SendBtn, SkipBtn,
+    LabelStyled,
+    PersonalDataLink, RadioIconStyled, SendBtn,
     StyledCard,
     StyledTitle, TextStyled, TextWrapperStyled,
     Wrapper
@@ -62,10 +62,6 @@ export const PhoneForm = () => {
             reachMetrikaGoal('phone');
             handleSubmit(phone).then(() => setLoading(false));
         }
-    }
-    const onSkip = () => {
-        reachMetrikaGoal('nophone');
-        setPrev();
     }
 
     useEffect(() => {
@@ -134,7 +130,6 @@ export const PhoneForm = () => {
                 >
                     Оставить номер
                 </SendBtn>
-                <SkipBtn onClick={onSkip}>Не хочу оставлять</SkipBtn>
             </BtnsBlock>
             {sendingMessage?.text && (
                 <Modal text={sendingMessage.text} icon={sendingMessage.icon} />

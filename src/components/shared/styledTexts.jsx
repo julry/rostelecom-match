@@ -23,6 +23,10 @@ export const Title = styled(BoldText)`
     font-size: 14px;
   }
 
+  @media screen and (min-width: 768px) {
+    font-size: 19px;
+  }
+  
   @media screen and (min-width: 1000px) {
     font-size: 20px;
   }
@@ -33,6 +37,10 @@ export const Description = styled(MediumText)`
   
   @media screen and (max-width: 320px){
     font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 17px;
   }
   
   @media screen and (min-width: 1000px) {
@@ -50,6 +58,10 @@ export const AddictiveText = styled(MediumText)`
   @media screen and (min-width: 1000px) {
     font-size: 14px;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 export const ColoredText = styled.span`
@@ -63,6 +75,10 @@ export const RegularDescription = styled(RegularText)`
   @media screen and (max-width: 330px){
     font-size: 9px;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
   
   @media screen and (min-width: 1000px) {
     font-size: 16px;
@@ -74,5 +90,13 @@ export const SmallLightText = styled(LightText)`
 
   @media screen and (max-width: 330px) {
     font-size: 9px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 14px;
   }
 `;

@@ -34,7 +34,6 @@ export const QuestionScreen = () => {
     const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
     const [swipedIndex, setSwipedIndex] = useState(cards.length);
     const currentIndexRef = useRef(currentIndex);
-    const canSwipe = currentIndex >= 0
 
     const childRefs = useMemo(
         () =>
@@ -85,10 +84,7 @@ export const QuestionScreen = () => {
                     />
                 ))}
             </CardContainer>
-            <SwipeBtns
-                canSwipe={canSwipe && currentIndex < cards.length && childRefs[currentIndex]}
-                cardRef={childRefs[currentIndex]}
-            />
+            <SwipeBtns/>
         </Wrapper>
     );
 };

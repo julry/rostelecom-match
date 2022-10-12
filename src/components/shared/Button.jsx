@@ -11,6 +11,10 @@ const StyledButton = styled.button`
   padding: 1.0416vh 0;
   font-size: 14px;
   font-weight: 500;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Button = (props) => {
