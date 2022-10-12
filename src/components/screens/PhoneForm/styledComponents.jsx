@@ -5,22 +5,12 @@ import { Button } from '../../shared/Button';
 
 export const StyledCard = styled.div`
   position: relative;
-  height: 55.9375%;
   padding: 7%;
-  min-height: 275px;
   width: 81.4814vw;
   max-width: 880px;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
-  
-  @media screen and (max-height: 550px) {
-    min-height: 235px;
-  }
-
-  @media screen and (min-width: 768px) {
-    min-height: 325px;
-  }
 `;
 
 export const Wrapper = styled.div`
@@ -57,7 +47,7 @@ export const StyledTitle = styled(Title)`
 export const Form = styled.div`
   position: relative;
   z-index: 3;
-  padding: 5.2083% 0;
+  padding: 7% 0 0;
 
   @media screen and (min-width: 1000px) {
     display: flex;

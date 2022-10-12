@@ -22,7 +22,7 @@ import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 import { ReturnBtn } from '../../shared/ReturnBtn';
 
 export const PhoneForm = () => {
-    const {next, setPrev, updateProgress} = useProgress();
+    const {setPrev, updateProgress} = useProgress();
     const [phone, setPhone] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [errorText, setErrorText] = useState('');
@@ -79,14 +79,13 @@ export const PhoneForm = () => {
                 Вернуться к супер-лайку
             </ReturnBtn>
             <StyledTitle>
-                Оставь свой номер телефона, чтобы{'\n'}участвовать в розыгрыше призов!
+                Оставь свой номер телефона, чтобы{'\n'}участвовать!
             </StyledTitle>
             <CardWrapper>
                 <StyledCard>
                     <DescriptionStyled>
                         <b>Оставь свой номер телефона, чтобы{'\n'}побороться за мерч!</b>{'\n\n'}
-                        Обещаем, что будем использовать его только для оповещения о выигрыше. Результаты определим рандомайзером в декабре 2022.{'\n'}
-                        Если не хочешь мерч от Ростелекома – можно пропустить этот этап!
+                        Обещаем, что будем использовать его только для оповещения о выигрыше. Результаты определим рандомайзером в декабре 2022.
                     </DescriptionStyled>
                     <Form>
                         <InputWrapper>
