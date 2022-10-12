@@ -47,7 +47,7 @@ export const StyledTitle = styled(Title)`
 export const Form = styled.div`
   position: relative;
   z-index: 3;
-  padding: 7% 0 0;
+  padding: 14% 0 0;
 
   @media screen and (min-width: 1000px) {
     display: flex;
@@ -98,7 +98,7 @@ export const LabelStyled = styled.label`
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 15px;
 
   @media screen and (min-width: 1000px) {
     margin-top: auto;
@@ -130,15 +130,15 @@ export const TextWrapperStyled = styled.div`
 export const TextStyled = styled(LightText)`
   font-family: 'LabGrotesque', serif;
   color: #797E8B;
-  font-size: 7px;
+  font-size: 10px;
 
 
   @media screen and (min-width: 768px) {
-    font-size: 10px;
+    font-size: 12px;
   }
   
   @media screen and (min-width: 1000px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 
@@ -164,18 +164,18 @@ export const PersonalDataLink = styled.span`
 `;
 
 export const DescriptionStyled = styled(RegularText)`
-  font-size: 11px;
+  font-size: 14px;
 
   @media screen and (max-width: 330px) {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
   
   @media screen and (min-width: 1000px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 `;
 
