@@ -5,11 +5,10 @@ import { Notification } from '../shared/Notification';
 import { useProgress } from '../../hooks/useProgress';
 import { ItsAMatch } from '../shared/svg/ItsAMatch';
 import { getStyledSvg } from '../shared/styledSvg';
-import { AddictiveText, ColoredText, RegularDescription, Title } from '../shared/styledTexts';
+import { ColoredText, RegularDescription, RegularText, Title } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { ImportantMark } from '../shared/svg/ImportantMark';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
-import { SimpleLeftArrow } from '../shared/svg/SimpleLeftArrow';
 import { ReturnBtn } from '../shared/ReturnBtn';
 
 const Wrapper = styled.div`
@@ -81,6 +80,38 @@ const ImportantSignWrapper = styled.div`
 
 const ImportantSign = getStyledSvg(ImportantMark);
 
+const RegularDescriptionStyled = styled(RegularText)`
+  font-size: 14px;
+
+  @media screen and (max-width: 330px){
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 18px;
+  }
+`;
+
+const ImportantText = styled(RegularText)`
+  font-size: 12px;
+
+  @media screen and (max-width: 330px){
+    font-size: 10px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 16px;
+  }
+`;
+
 export const Final = () => {
     const result = useResult();
     const {next, progress} = useProgress();
@@ -122,15 +153,15 @@ export const Final = () => {
             </MatchWrapper>
             <CommunicationWrapper>
                 <TitleStyled>Начните общение</TitleStyled>
-                <RegularDescription>{result.communication}</RegularDescription>
+                <RegularDescriptionStyled>{result.communication}</RegularDescriptionStyled>
             </CommunicationWrapper>
             <ImportantWrapper>
                 <ImportantSignWrapper>
                     <ImportantSign/>
                 </ImportantSignWrapper>
-                <RegularDescription>
+                <ImportantText>
                     Кстати, на первое свидание тебя {result.firstDate}
-                </RegularDescription>
+                </ImportantText>
             </ImportantWrapper>
         </Wrapper>
     );
