@@ -4,13 +4,26 @@ import { startMan } from '../../../constants/images';
 import { AddictiveText, Title } from '../../shared/styledTexts';
 import {
     BlackRoad,
-    BlackRoadWrapper, ContentBlock,
-    DescriptionWrapper, ImportantSign, ImportantWrapper,
+    BlackRoadWrapper,
+    ContentBlock,
+    DescriptionWrapper,
+    ImportantSign,
+    ImportantWrapper,
     Man,
-    ManWrapper, OrangeRoad, OrangeRoadWrapper, PurpleRoad, PurpleRoadWrapper, SmallText, StartBtn,
+    ManWrapper,
+    OrangeRoad,
+    OrangeRoadWrapper,
+    PersonWrapper,
+    PurpleRoad,
+    PurpleRoadWrapper,
+    SmallText,
+    SmallTextWrapper,
+    StartBtn,
     ThinkCloudStyled,
     ThinkPath,
-    ThinkPathWrapper, ThinkText,
+    ThinkPathWrapper,
+    ThinkText,
+    ThinkTextWrapper,
     ThinkWrapper,
     Wrapper
 } from './styledComponents';
@@ -27,21 +40,27 @@ export const StartScreen = () => {
     return (
         <Wrapper>
             <ContentBlock>
-                <ManWrapper>
-                    <Man src={startMan} alt={''}/>
-                </ManWrapper>
-                <ThinkPathWrapper>
-                    <ThinkPath/>
-                </ThinkPathWrapper>
-                <ThinkWrapper height={progress.height}>
-                    <ThinkCloudStyled/>
-                    <ThinkText>
-                        {'«Эх, было бы с выбором работы\nвсё так же просто, как с приложениями\nдля знакомств :(»'}
-                    </ThinkText>
-                    <SmallText>
-                        {'Поделился мыслями вслух один\nиз наших стажеров, и мы решили\nисполнить его желание!'}
-                    </SmallText>
-                </ThinkWrapper>
+                <PersonWrapper>
+                    <ManWrapper>
+                        <Man src={startMan} alt={''}/>
+                    </ManWrapper>
+                    <ThinkTextWrapper>
+                        <ThinkPathWrapper>
+                            <ThinkPath/>
+                        </ThinkPathWrapper>
+                        <ThinkWrapper height={progress.height}>
+                            <ThinkCloudStyled/>
+                            <ThinkText>
+                                {'«Эх, было бы с выбором работы\nвсё так же просто, как с приложениями\nдля знакомств :(»'}
+                            </ThinkText>
+                        </ThinkWrapper>
+                        <SmallTextWrapper>
+                            <SmallText>
+                                {'Поделился мыслями вслух один\nиз наших стажеров, и мы решили\nисполнить его желание!'}
+                            </SmallText>
+                        </SmallTextWrapper>
+                    </ThinkTextWrapper>
+                </PersonWrapper>
                 <DescriptionWrapper>
                     <Title>
                         {'Свайпай влево, свайпай вправо\nи находи идеальный мэтч \nс отделом Ростелекома!'}

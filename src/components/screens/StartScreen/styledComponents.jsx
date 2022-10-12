@@ -43,6 +43,21 @@ export const Man = styled.img`
   object-fit: contain;
 `;
 
+
+export const PersonWrapper = styled.div`
+  display: flex;
+`;
+
+export const ThinkTextWrapper = styled.div`
+  padding-top: calc(7.0564vh + 8px);
+  margin-left: -25px;
+  width: 63.4259vw;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+`;
+
+
 export const ThinkPathWrapper = styled.div`
   position: absolute;
   top: 11.1777vh;
@@ -58,43 +73,32 @@ export const ThinkPathWrapper = styled.div`
 
 export const ThinkPath = getStyledSvg(ThinkingPath);
 
-const getWrapperLeft = (height) => {
-    const minWidth = height * 0.163538;
-    const maxWidth = 314;
-    const width = document.documentElement.clientWidth * 0.3;
-    let distance = width;
-
-    if (width < minWidth) distance = minWidth;
-    if (distance > maxWidth) distance = maxWidth;
-
-    return (distance - 10) + 'px';
-};
+export const SmallTextWrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+`;
 
 export const ThinkWrapper = styled.div`
-  position: absolute;
-  left: ${({height}) => getWrapperLeft(height)};
-  top: 17.9375vh;
+  position: relative;
   width: 63.4259vw;
-  height: 9.53125vh;
-  min-height: 55px;
+  height: 16.8974vw;
   max-width: 240px;
+  max-height: 65px;
+  flex-shrink: 0;
 
   @media screen and (min-width: 1000px) {
-    top: 10.1777%;
-    left: auto;
-    right: 0;
+    margin-left: auto;
   }
 
   @media screen and (min-width: 450px) {
     max-width: 300px;
+    max-height: 78px;
   }
   
   @media screen and (min-width: 640px) {
-    max-width: 400px;
-  }
-  
-  @media screen and (max-width: 320px) and (min-height: 600px){
-    height: 8.4562vh;
+    max-width: 330px;
+    max-height: 90px;
   }
 `;
 
@@ -112,12 +116,6 @@ export const ThinkText = styled(MediumText)`
   @media screen and (max-width: 345px){
     font-size: 8px;
   }
-  
-  @media screen and (max-width: 320px) and (min-height: 600px){
-    left: 25%;
-    top: 24%;
-  }
-
   
   @media screen and (max-width: 300px){
     left: 11.4%;
@@ -153,9 +151,6 @@ export const SmallText = styled(LightText)`
     font-size: 8px;
   }
   
-  @media screen and (max-width: 320px) and (min-height: 600px){
-    margin-left: 25%;
-  }
 
   @media screen and (max-width: 300px){
     margin-left: 11.4%;
@@ -273,4 +268,4 @@ export const ContentBlock = styled.div`
     max-width: 500px;
     margin: 0 auto;
   }
-`
+`;
