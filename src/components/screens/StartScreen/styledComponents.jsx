@@ -91,6 +91,11 @@ export const ThinkWrapper = styled.div`
     margin-left: auto;
   }
 
+  @media screen and (min-height: 670px){
+    width: 66.4259vw;
+    max-width: 260px;
+  }
+  
   @media screen and (min-width: 450px) {
     max-width: 300px;
     max-height: 78px;
@@ -108,21 +113,26 @@ export const ThinkCloudStyled = styled(ThinkingCloud)`
 `;
 
 export const ThinkText = styled(MediumText)`
-  font-size: 10px;
+  font-size: 11px;
   position: absolute;
   top: 28%;
-  left: 13.8248%;
+  left: 10.8248%;
   
+
+  @media screen and (min-width: 450px) {
+    font-size: 12px;
+  }
+  
+  @media screen and (min-height: 670px){
+    font-size: 12px;
+  }
+
   @media screen and (max-width: 345px){
     font-size: 8px;
   }
-  
+
   @media screen and (max-width: 300px){
     left: 11.4%;
-  }
-
-  @media screen and (min-width: 450px) {
-    font-size: 11px;
   }
   
   @media screen and (min-width: 1000px) {
@@ -136,17 +146,22 @@ export const ThinkText = styled(MediumText)`
   @media screen and (min-width: 640px) {
     font-size: 13px;
   }
+  
 `;
 
 export const SmallText = styled(LightText)`
-  font-size: 10px;
-  margin-left: 13.8248%;
+  font-size: 11px;
+  margin-left: 10.8248%;
 
   @media screen and (min-width: 1000px) {
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 10.5%;
   }
 
+  @media screen and (min-height: 670px){
+    font-size: 12px;
+  }
+  
   @media screen and (max-width: 320px){
     font-size: 8px;
   }
