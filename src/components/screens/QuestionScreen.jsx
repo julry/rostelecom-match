@@ -32,7 +32,6 @@ export const QuestionScreen = () => {
     const {cards = [], updateAnswer, updateCards, next} = useProgress();
     const [currentCardId, setCurrentCardId] = useState('');
     const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
-    const [swipedIndex, setSwipedIndex] = useState(cards.length);
     const currentIndexRef = useRef(currentIndex);
 
     const childRefs = useMemo(
@@ -45,7 +44,6 @@ export const QuestionScreen = () => {
 
     const updateCurrentIndex = (val) => {
         setCurrentIndex(val);
-        setSwipedIndex(val);
         currentIndexRef.current = val;
     };
 
@@ -57,16 +55,13 @@ export const QuestionScreen = () => {
     };
 
     useEffect(() => {
+        if (typeof currentCardId === 'number') reachMetrikaGoal('q'+ (cards.length - currentIndex));
+
         if (getCardById(currentCardId)?.type === CARD_TYPES.common) {
             updateCards();
         }
         if (+currentCardId === cards.length) next();
     }, [currentCardId]);
-
-    useEffect(() => {
-        if (swipedIndex === cards.length) return;
-        reachMetrikaGoal('q'+ (cards.length - swipedIndex));
-    }, [swipedIndex]);
 
     return (
         <Wrapper style={{width: '100%'}}>
