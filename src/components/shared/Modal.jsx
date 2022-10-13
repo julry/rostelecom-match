@@ -49,7 +49,7 @@ const Icon = styled.div`
 const TextStyled = styled(MediumText)`
   font-size: 14px;
   
-  @media screen and (min-width: 1000px){
+  @media screen and (min-width: 1000px) {
     font-size: 16px;
   }
 `;

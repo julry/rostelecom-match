@@ -5,7 +5,7 @@ import { Notification } from '../shared/Notification';
 import { useProgress } from '../../hooks/useProgress';
 import { ItsAMatch } from '../shared/svg/ItsAMatch';
 import { getStyledSvg } from '../shared/styledSvg';
-import { ColoredText, RegularDescription, RegularText, Title } from '../shared/styledTexts';
+import { ColoredText, RegularText, Title } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { ImportantMark } from '../shared/svg/ImportantMark';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
@@ -102,7 +102,7 @@ const ImportantSign = getStyledSvg(ImportantMark);
 const RegularDescriptionStyled = styled(RegularText)`
   font-size: 12px;
 
-  @media screen and (max-width: 330px){
+  @media screen and (max-width: 330px) {
     font-size: 11px;
   }
 
@@ -122,7 +122,7 @@ const RegularDescriptionStyled = styled(RegularText)`
 const ImportantText = styled(RegularText)`
   font-size: 12px;
 
-  @media screen and (max-width: 330px){
+  @media screen and (max-width: 330px) {
     font-size: 11px;
   }
 

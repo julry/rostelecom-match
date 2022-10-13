@@ -8,12 +8,10 @@ import {
     AddictiveText,
     ColoredText,
     RegularDescription,
-    SmallLightText,
     Title
 } from '../shared/styledTexts';
 import { colors } from '../../constants/colors';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
-import { SimpleLeftArrow } from '../shared/svg/SimpleLeftArrow';
 import { useProgress } from '../../hooks/useProgress';
 import { ReturnBtn } from '../shared/ReturnBtn';
 
@@ -73,7 +71,6 @@ const StyledButtonPrize = styled(StyledButton)`
   border: ${({disabled}) => disabled ? '1px solid #B5B7C0' : 'none'};
   color: ${({disabled}) => disabled ? '#B5B7C0' : 'white'};
 `;
-
 
 const Description = styled(RegularDescription)`
   margin-bottom: 1vh;
@@ -181,5 +178,6 @@ export const BonusScreen = () => {
                 </StyledButtonPrize>
             </ButtonBlock>
             {copyReadyModal && <Modal text={'Ссылка\nскопирована'} icon={DoneMark}/>}
-        </Wrapper>);
+        </Wrapper>
+    );
 };

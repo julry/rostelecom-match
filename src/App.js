@@ -102,7 +102,6 @@ function App() {
         function handleResize() {
             const viewportHeight = document.documentElement.clientHeight;
             setHeight(viewportHeight + 'px');
-            updateProgress('height', viewportHeight);
         }
 
         handleResize();

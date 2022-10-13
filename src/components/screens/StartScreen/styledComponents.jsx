@@ -106,12 +106,12 @@ export const ThinkWrapper = styled.div`
     margin-left: auto;
   }
 
-  @media screen and (min-height: 670px){
+  @media screen and (min-height: 670px) {
     width: 66.4259vw;
     max-width: 260px;
   }
   
-  @media screen and (min-width: 450px) and (min-height: 750px){
+  @media screen and (min-width: 450px) and (min-height: 750px) {
     max-width: 300px;
     max-height: 78px;
   }
@@ -124,7 +124,6 @@ export const ThinkWrapper = styled.div`
 
 export const ThinkCloudStyled = styled(ThinkingCloud)`
     width: 100%;
-  
 `;
 
 export const ThinkText = styled(MediumText)`
@@ -133,20 +132,19 @@ export const ThinkText = styled(MediumText)`
   top: 28%;
   left: 9.8248%;
   
-
   @media screen and (min-width: 450px) {
     font-size: 12px;
   }
   
-  @media screen and (min-width: 370px) and (min-height: 670px){
+  @media screen and (min-width: 370px) and (min-height: 670px) {
     font-size: 12px;
   }
 
-  @media screen and (max-width: 345px){
+  @media screen and (max-width: 345px) {
     font-size: 9px;
   }
 
-  @media screen and (max-width: 300px){
+  @media screen and (max-width: 300px) {
     font-size: 8px;
     left: 11.4%;
   }
@@ -155,14 +153,14 @@ export const ThinkText = styled(MediumText)`
     font-size: 12px;
     left: 10.5%;
   }
-  @media screen and (max-height: 550px){
+  
+  @media screen and (max-height: 550px) {
     font-size: 9px;
   }
 
   @media screen and (min-width: 640px) {
     font-size: 13px;
   }
-  
 `;
 
 export const SmallText = styled(LightText)`
@@ -174,20 +172,19 @@ export const SmallText = styled(LightText)`
     margin-left: 10.5%;
   }
 
-  @media screen and (min-width: 370px) and (min-height: 670px){
+  @media screen and (min-width: 370px) and (min-height: 670px) {
     font-size: 12px;
   }
   
-  @media screen and (max-width: 320px){
+  @media screen and (max-width: 320px) {
     font-size: 9px;
   }
-  
 
-  @media screen and (max-width: 300px){
+  @media screen and (max-width: 300px) {
     margin-left: 11.4%;
   }
 
-  @media screen and (max-height: 550px){
+  @media screen and (max-height: 550px) {
     font-size: 8px;
     line-height: 105%;
   }
@@ -213,7 +210,7 @@ export const DescriptionWrapper = styled.div`
     padding: 70px;
   }
   
-  @media screen and (max-width: 320px){
+  @media screen and (max-width: 320px) {
     padding: 4.8229vh 2vw;
   }
 `;
@@ -223,7 +220,7 @@ export const ImportantWrapper = styled.div`
   margin: 4.677vh 0 1.3952vh;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const ImportantSign = styled(ImportantMark)`
   height: 6.0416vh;
@@ -294,7 +291,7 @@ export const ContentBlock = styled.div`
   height: 100%;
   width: 100%;
   
-  @media screen and (min-width: 1000px){
+  @media screen and (min-width: 1000px) {
     position: relative;
     max-width: 500px;
     margin: 0 auto;
@@ -304,7 +301,7 @@ export const ContentBlock = styled.div`
 export const ImportantText = styled(RegularText)`
   font-size: 14px;
 
-  @media screen and (max-width: 330px){
+  @media screen and (max-width: 330px) {
     font-size: 12px;
   }
 

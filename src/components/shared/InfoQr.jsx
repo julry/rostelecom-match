@@ -62,6 +62,7 @@ const Image = styled.img`
 
 export const InfoQr = () => {
     const ref = useRef();
+
     useEffect(() => {
         const qrCode = new QRCodeStyling({
             width: 200,

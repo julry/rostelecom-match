@@ -40,7 +40,7 @@ const Sentence = styled(BoldText)`
   font-size: 19px;
   margin: 5.2vh 5.2592vw 0 9.2592vw;
   
-  @media screen and (max-width: 330px){
+  @media screen and (max-width: 330px) {
     font-size: 14px;
   }
 

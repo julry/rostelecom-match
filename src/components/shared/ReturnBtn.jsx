@@ -39,6 +39,5 @@ export const ReturnBtn = (props) => {
             <ReturnText>{props.children}</ReturnText>
             {direction === 'next' && <ReturnIconRight/>}
         </ReturnWrapper>
-    )
-}
-
+    );
+};

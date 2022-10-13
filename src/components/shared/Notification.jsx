@@ -68,7 +68,6 @@ const opacityAppear = keyframes`
   }
 `;
 
-
 const Wrapper = styled.div`
   height: 9.8645vh;
   width: 90.7407vw;
@@ -100,7 +99,7 @@ const Content = styled.div`
   text-overflow: ellipsis;
   font-size: 17px;
   
-  @media screen and (max-width: 330px){
+  @media screen and (max-width: 330px) {
     font-size: 15px;
   }
 

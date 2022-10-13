@@ -1,7 +1,7 @@
 import React from 'react';
 import { useProgress } from '../../../hooks/useProgress';
 import { startMan } from '../../../constants/images';
-import { AddictiveText, Title } from '../../shared/styledTexts';
+import { Title } from '../../shared/styledTexts';
 import {
     BlackRoad,
     BlackRoadWrapper,
@@ -30,7 +30,7 @@ import {
 import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 
 export const StartScreen = () => {
-    const {next, progress} = useProgress();
+    const {next} = useProgress();
 
     const onStart = () => {
         reachMetrikaGoal('start')
@@ -48,7 +48,7 @@ export const StartScreen = () => {
                         <ThinkPathWrapper>
                             <ThinkPath/>
                         </ThinkPathWrapper>
-                        <ThinkWrapper height={progress.height}>
+                        <ThinkWrapper>
                             <ThinkCloudStyled/>
                             <ThinkText>
                                 {'«Эх, было бы с выбором работы\nвсё так же просто, как с приложениями\nдля знакомств :(»'}

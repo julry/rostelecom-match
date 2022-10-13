@@ -23,10 +23,10 @@ const StyledCard = styled(SwipeCard)`
   height: 59.4583vh;
   max-height: 1180px;
   
-  @media screen and (max-height: 500px){
+  @media screen and (max-height: 500px) {
     height: 55vh;
   }
-`
+`;
 
 export const QuestionScreen = () => {
     const {cards = [], updateAnswer, updateCards, next} = useProgress();
@@ -49,7 +49,7 @@ export const QuestionScreen = () => {
         currentIndexRef.current = val;
     };
 
-    const onSwipe = (side, id, index) => {
+    const onSwipe = (side, id) => {
         if (!['right', 'left'].includes(side)) return;
         updateAnswer(id, {isAgreed: side === 'right'});
         setCurrentCardId(id);
