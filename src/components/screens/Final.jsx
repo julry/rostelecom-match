@@ -42,6 +42,10 @@ const MatchTitle = styled(ColoredText)`
   font-size: 24px;
   text-transform: uppercase;
   font-weight: 700;
+
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 32px;
+  }
 `;
 
 const CommunicationWrapper = styled.div`
@@ -56,7 +60,22 @@ const CommunicationWrapper = styled.div`
 `;
 
 const TitleStyled = styled(Title)`
-  margin-bottom: 18px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  
+  @media screen and (max-width: 330px){
+    font-size: 17px;
+    margin-bottom: 7px;
+  }
+  
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    font-size: 19px;
+  }
 `;
 
 const ImportantWrapper = styled.div`
@@ -81,12 +100,16 @@ const ImportantSignWrapper = styled.div`
 const ImportantSign = getStyledSvg(ImportantMark);
 
 const RegularDescriptionStyled = styled(RegularText)`
-  font-size: 14px;
+  font-size: 12px;
 
   @media screen and (max-width: 330px){
-    font-size: 12px;
+    font-size: 11px;
   }
 
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 14px;
+  }
+  
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
@@ -100,9 +123,13 @@ const ImportantText = styled(RegularText)`
   font-size: 12px;
 
   @media screen and (max-width: 330px){
-    font-size: 10px;
+    font-size: 11px;
   }
 
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 14px;
+  }
+  
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
