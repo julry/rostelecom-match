@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { colors } from '../../../constants/colors';
-import { AddictiveText, LightText, RegularText, SmallLightText, Title } from '../../shared/styledTexts';
+import { LightText, RegularText, Title } from '../../shared/styledTexts';
 import { Button } from '../../shared/Button';
 
 export const StyledCard = styled.div`
@@ -11,6 +11,10 @@ export const StyledCard = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -49,6 +53,10 @@ export const Form = styled.div`
   z-index: 3;
   padding: 14% 0 0;
 
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    padding-top: 26%;
+  }
+  
   @media screen and (min-width: 1000px) {
     display: flex;
     height: 100%;
@@ -130,9 +138,12 @@ export const TextWrapperStyled = styled.div`
 export const TextStyled = styled(LightText)`
   font-family: 'LabGrotesque', serif;
   color: #797E8B;
-  font-size: 10px;
+  font-size: 9px;
 
-
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 10px;
+  }
+  
   @media screen and (min-width: 768px) {
     font-size: 12px;
   }
@@ -150,6 +161,10 @@ export const CardWrapper = styled.div`
   height: 55.9375%;
   min-height: 275px;
 
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    margin-top: 13%;
+  }
+  
   @media screen and (max-height: 550px) {
     min-height: 235px;
   }
@@ -170,6 +185,10 @@ export const DescriptionStyled = styled(RegularText)`
     font-size: 12px;
   }
 
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 16px;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
@@ -183,15 +202,6 @@ export const InputWrapper = styled.div`
   padding: 10px;
   border-radius: 10px;
   background: #F4F4F5;
-`;
-
-export const LoadingWrapper = styled.div`
-  align-items: center;
-  width: 100%;
-`;
-
-export const LoadingText = styled(AddictiveText)`
-  text-align: center;
 `;
 
 const sending = keyframes`

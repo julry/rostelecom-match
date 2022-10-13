@@ -54,6 +54,10 @@ export const AddictiveText = styled(MediumText)`
   @media screen and (max-width: 330px){
     font-size: 10px;
   }
+
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 14px;
+  }
   
   @media screen and (min-width: 1000px) {
     font-size: 14px;
@@ -76,6 +80,10 @@ export const RegularDescription = styled(RegularText)`
     font-size: 9px;
   }
 
+  @media screen and (min-width: 350px) and (min-height: 700px) {
+    font-size: 12px;
+  }
+  
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }

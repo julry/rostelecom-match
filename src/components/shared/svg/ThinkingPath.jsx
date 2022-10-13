@@ -5,6 +5,4 @@ export const ThinkingPath = (props) => (
         <circle cx="20.059" cy="14.0051" r="6" transform="rotate(-12.4352 20.059 14.0051)" fill="#F4F4F5"/>
         <circle cx="3.60811" cy="25.3128" r="2.5" transform="rotate(-12.4352 3.60811 25.3128)" fill="#F4F4F5"/>
     </svg>
-
-
 )
