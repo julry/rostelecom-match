@@ -11,6 +11,7 @@ export const StyledCard = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid ${colors.purple};
+  
   @media screen and (min-width: 350px) and (min-height: 700px) {
     padding-top: 10%;
     padding-bottom: 10%;
@@ -43,6 +44,7 @@ export const Label = styled(RegularText)`
 export const StyledTitle = styled(Title)`
   font-size: 16px;
   margin-left: 9.2592%;
+  
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }

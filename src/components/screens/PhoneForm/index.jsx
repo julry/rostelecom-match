@@ -48,7 +48,6 @@ export const PhoneForm = () => {
                 setSendingMessage({});
             }, 3000);
         }
-
     }
 
     const onTouchStart = (e, callback) => {
@@ -84,7 +83,7 @@ export const PhoneForm = () => {
             <CardWrapper>
                 <StyledCard>
                     <DescriptionStyled>
-                        Обещаем, что будем использовать его только для оповещения о выигрыше. Результаты определим рандомайзером в декабре 2022.
+                        Обещаем, что будем использовать его только для оповещения о выигрыше. Результаты определим рандомайзером в декабре 2022
                     </DescriptionStyled>
                     <Form>
                         <InputWrapper>
@@ -133,5 +132,5 @@ export const PhoneForm = () => {
                 <Modal text={sendingMessage.text} icon={sendingMessage.icon} />
             )}
         </Wrapper>
-    )
-}
+    );
+};
