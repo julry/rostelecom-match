@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { getStyledSvg } from '../../shared/styledSvg';
 import { ThinkingPath } from '../../shared/svg/ThinkingPath';
 import { ThinkingCloud } from '../../shared/svg/ThinkingCloud';
-import { LightText, MediumText } from '../../shared/styledTexts';
+import { LightText, MediumText, RegularText } from '../../shared/styledTexts';
 import { ImportantMark } from '../../shared/svg/ImportantMark';
 import { Button } from '../../shared/Button';
 import { Road } from '../../shared/svg/Road';
@@ -10,7 +10,7 @@ import { RoadRed } from '../../shared/svg/RoadRed';
 import { RoadBlack } from '../../shared/svg/RoadBlack';
 
 export const Wrapper = styled.div`
-  padding: 10.4vh 0 0;
+  padding: 12.4vh 0 0;
   position: relative;
   height: 100%;
   width: 100%;
@@ -20,11 +20,13 @@ export const Wrapper = styled.div`
 `;
 
 export const ManWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
   padding-top: 5.2687vh;
   width: 30vw;
   max-width: 314px;
   min-width: 16.3538vh;
-  height: 25.135vh;
+  height: 23.135vh;
   max-height: 425px;
   margin-left: 3.5407vw;
   position: relative;
@@ -41,6 +43,15 @@ export const Man = styled.img`
   height: 100%;
   width: 100%;
   object-fit: contain;
+  max-height: 130px;
+
+  @media screen and (min-width: 350px) and (min-height: 650px) {
+    max-height: 150px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    max-height: 210px;
+  }
 `;
 
 
@@ -49,12 +60,16 @@ export const PersonWrapper = styled.div`
 `;
 
 export const ThinkTextWrapper = styled.div`
-  padding-top: calc(7.0564vh + 8px);
+  padding-top: calc(3.0564vh + 8px);
   margin-left: -25px;
-  width: 63.4259vw;
+  width: 64.4259vw;
   max-width: 240px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 350px) and (min-height: 650px) {
+    margin-left: -30px;
+  }
 `;
 
 
@@ -62,7 +77,7 @@ export const ThinkPathWrapper = styled.div`
   position: absolute;
   top: 11.1777vh;
   left: 20.1851vw;
-  height: 6.7187vh;
+  height: 5.7187vh;
   width: 22.7777vw;
   
   @media screen and (min-width: 1000px) {
@@ -82,9 +97,9 @@ export const SmallTextWrapper = styled.div`
 export const ThinkWrapper = styled.div`
   position: relative;
   width: 63.4259vw;
-  height: 16.8974vw;
-  max-width: 240px;
-  max-height: 65px;
+  height: 18.9333vw;
+  max-width: 242px;
+  max-height: 71px;
   flex-shrink: 0;
 
   @media screen and (min-width: 1000px) {
@@ -96,7 +111,7 @@ export const ThinkWrapper = styled.div`
     max-width: 260px;
   }
   
-  @media screen and (min-width: 450px) {
+  @media screen and (min-width: 450px) and (min-height: 750px){
     max-width: 300px;
     max-height: 78px;
   }
@@ -116,22 +131,23 @@ export const ThinkText = styled(MediumText)`
   font-size: 11px;
   position: absolute;
   top: 28%;
-  left: 10.8248%;
+  left: 9.8248%;
   
 
   @media screen and (min-width: 450px) {
     font-size: 12px;
   }
   
-  @media screen and (min-height: 670px){
+  @media screen and (min-width: 370px) and (min-height: 670px){
     font-size: 12px;
   }
 
   @media screen and (max-width: 345px){
-    font-size: 8px;
+    font-size: 9px;
   }
 
   @media screen and (max-width: 300px){
+    font-size: 8px;
     left: 11.4%;
   }
   
@@ -140,7 +156,7 @@ export const ThinkText = styled(MediumText)`
     left: 10.5%;
   }
   @media screen and (max-height: 550px){
-    font-size: 8px;
+    font-size: 9px;
   }
 
   @media screen and (min-width: 640px) {
@@ -151,19 +167,19 @@ export const ThinkText = styled(MediumText)`
 
 export const SmallText = styled(LightText)`
   font-size: 11px;
-  margin-left: 10.8248%;
+  margin-left: 9.8248%;
 
   @media screen and (min-width: 1000px) {
     font-size: 12px;
     margin-left: 10.5%;
   }
 
-  @media screen and (min-height: 670px){
+  @media screen and (min-width: 370px) and (min-height: 670px){
     font-size: 12px;
   }
   
   @media screen and (max-width: 320px){
-    font-size: 8px;
+    font-size: 9px;
   }
   
 
@@ -282,5 +298,21 @@ export const ContentBlock = styled.div`
     position: relative;
     max-width: 500px;
     margin: 0 auto;
+  }
+`;
+
+export const ImportantText = styled(RegularText)`
+  font-size: 14px;
+
+  @media screen and (max-width: 330px){
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 17px;
   }
 `;

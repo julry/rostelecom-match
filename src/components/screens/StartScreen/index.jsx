@@ -7,7 +7,7 @@ import {
     BlackRoadWrapper,
     ContentBlock,
     DescriptionWrapper,
-    ImportantSign,
+    ImportantSign, ImportantText,
     ImportantWrapper,
     Man,
     ManWrapper,
@@ -67,9 +67,9 @@ export const StartScreen = () => {
                     </Title>
                     <ImportantWrapper>
                         <ImportantSign/>
-                        <AddictiveText>
+                        <ImportantText>
                             {'Следуй своим истинным желаниям,\nтолько тогда тропа из свайпов\nприведет тебя в нужное место'}
-                        </AddictiveText>
+                        </ImportantText>
                     </ImportantWrapper>
                     <StartBtn onClick={onStart}>На поиски!</StartBtn>
                 </DescriptionWrapper>
