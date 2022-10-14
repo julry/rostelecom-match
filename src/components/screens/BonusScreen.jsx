@@ -14,6 +14,7 @@ import { colors } from '../../constants/colors';
 import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 import { useProgress } from '../../hooks/useProgress';
 import { ReturnBtn } from '../shared/ReturnBtn';
+import { getLinkWithoutParams } from '../../utils/getLinkWithoutParams';
 
 const Wrapper = styled.div`
   padding: 14.2083vh 9.2592vw 20px 9.2592vw;
@@ -83,7 +84,7 @@ export const BonusScreen = () => {
 
     const onCopy = () => {
         reachMetrikaGoal('share');
-        const text = window.location.href;
+        const text = getLinkWithoutParams(window.location.href);
         if (window.clipboardData && window.clipboardData.setData) {
             return window.clipboardData.setData('Text', text);
         } else if (navigator.clipboard && window.isSecureContext) {

@@ -4,6 +4,7 @@ import QRCodeStyling from 'qr-code-styling';
 import { phoneImg, qrLogo } from '../../constants/images';
 import { colors } from '../../constants/colors';
 import { BoldText, MediumText } from './styledTexts';
+import { getLinkWithoutParams } from '../../utils/getLinkWithoutParams';
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -102,7 +103,7 @@ export const InfoQr = () => {
                     <b>Сканируй QR-код ниже или копируй себе ссылку</b>
                 </Description>
                 <Description>
-                    {window.location.href}
+                    {getLinkWithoutParams(window.location.href)}
                 </Description>
                 <QrWrapper>
                     <div ref={ref} />

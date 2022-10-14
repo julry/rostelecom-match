@@ -23,11 +23,7 @@ const INITIAL_PROGRESS = {
 
 export function useProgressInit() {
     const [progress, setProgress] = useState(INITIAL_PROGRESS);
-    /////////////////// for development ////////////////////////////////////
-    const urlParams = new URLSearchParams(window.location.search);
-    const screenParam = urlParams.get('screen');
-    ////////////////////////////////////////////////////////////////////////
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(+screenParam || 0);
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
     const screen = screens[currentScreenIndex];
 
     const setPrev = () => {
