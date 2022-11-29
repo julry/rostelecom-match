@@ -1,7 +1,6 @@
 import { StartScreen } from '../components/screens/StartScreen';
 import { DescriptiveScreen } from '../components/screens/DescriptiveScreen';
 import { QuestionScreen } from '../components/screens/QuestionScreen';
-import { PhoneForm } from '../components/screens/PhoneForm';
 import { Final } from '../components/screens/Final';
 import { BonusScreen } from '../components/screens/BonusScreen';
 import { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11 } from './images';
@@ -32,9 +31,4 @@ export const screens = [
         component: BonusScreen,
         preloadImages: [],
     },
-    {
-        id: 5,
-        component: PhoneForm,
-        preloadImages: [],
-    }
 ];

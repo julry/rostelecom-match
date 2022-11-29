@@ -79,7 +79,7 @@ const Description = styled(RegularDescription)`
 
 export const BonusScreen = () => {
     const bonuses = useBonusesResult();
-    const {setPrev, updateProgress, next, progress} = useProgress();
+    const {setPrev, updateProgress, next} = useProgress();
     const [copyReadyModal, setCopyReadyModal] = useState(false);
 
     const onCopy = () => {
@@ -172,10 +172,10 @@ export const BonusScreen = () => {
                     Отправить ссылку другу
                 </StyledButton>
                 <StyledButtonPrize
-                    onClick={progress?.phoneSaved ? () => {} : onPrizeClick}
-                    disabled={progress?.phoneSaved}
+                    onClick={() => {}}
+                    disabled={true}
                 >
-                    {progress.phoneSaved ? 'Ты уже участвуешь в борьбе за мерч!' : 'Получить мерч от Ростелекома'}
+                    Увы, розыгрыш окончен :(
                 </StyledButtonPrize>
             </ButtonBlock>
             {copyReadyModal && <Modal text={'Ссылка\nскопирована'} icon={DoneMark}/>}
